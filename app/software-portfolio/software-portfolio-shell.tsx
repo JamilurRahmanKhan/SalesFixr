@@ -5,8 +5,10 @@ import { useEffect, useRef, useState } from "react";
 
 export function SoftwarePortfolioShell({
   mode = "game",
+  page = "index",
 }: {
   mode?: "preview" | "game";
+  page?: "index" | "services";
 }) {
   const router = useRouter();
   const [loaded, setLoaded] = useState(false);
@@ -38,6 +40,10 @@ export function SoftwarePortfolioShell({
       if (event.origin !== window.location.origin) return;
       if (event.data === "enter-journey" || event.data === "go-to-software-portfolio") {
         router.push("/software-portfolio");
+      } else if (event.data === "go-to-services") {
+        router.push("/services");
+      } else if (event.data === "go-to-home") {
+        router.push("/software");
       }
     }
     window.addEventListener("message", onMessage);
@@ -94,7 +100,7 @@ export function SoftwarePortfolioShell({
           title="Interactive CompassNCrew software portfolio"
           src={
             mode === "preview"
-              ? "/software-portfolio-app/huly-landing/index.html"
+              ? `/software-portfolio-app/huly-landing/${page}.html`
               : `/software-portfolio-app/index.html?mode=${mode}`
           }
           className="block h-full w-full border-0 bg-[#111315]"
