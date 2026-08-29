@@ -80,12 +80,6 @@ kbd { min-width: 24px; height: 24px; display: inline-grid; place-items: center; 
 .experience[data-auto-tour="true"] .touch-controls, .experience[data-auto-tour="true"] .approach-hint { display: none; }
 .experience[data-auto-tour="true"] #next-project { display: none; }
 
-.loading { position: absolute; z-index: var(--z-modal); inset: 0; display: grid; place-content: center; justify-items: center; gap: 14px; background: var(--canvas); transition: opacity var(--motion-slow) var(--ease-out), visibility var(--motion-slow); }
-.experience[data-ready="true"] .loading { opacity: 0; visibility: hidden; pointer-events: none; }
-.loading__mark { width: 58px; height: 58px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 16px; color: var(--orange); font: 400 32px/1 Georgia, serif; }
-.loading p { margin: 0; color: var(--muted); font-size: 13px; }
-.loading__track { width: 180px; height: 2px; overflow: hidden; background: rgb(255 255 255 / 8%); }
-.loading__track span { display: block; width: 46%; height: 100%; background: var(--orange); animation: load-track 1.2s var(--ease-out) infinite alternate; }
 @keyframes load-track { to { transform: translateX(118%); } }
 
 .showcase-modal { position: absolute; z-index: var(--z-panel); right: clamp(18px, 3vw, 48px); top: 50%; width: min(730px, calc(100vw - 36px)); display: grid; grid-template-columns: minmax(270px, .92fr) minmax(0, 1.08fr); overflow: hidden; border: 1px solid color-mix(in srgb, var(--project-color) 30%, rgb(244 234 214 / 17%)); border-radius: calc(var(--radius-lg) + 6px); background: var(--surface); box-shadow: 0 40px 120px rgb(0 0 0 / 58%), 0 0 0 1px rgb(255 255 255 / 5%) inset, 0 1px 0 rgb(255 255 255 / 8%) inset, 0 30px 70px -20px color-mix(in srgb, var(--project-color) 45%, transparent); backdrop-filter: blur(24px) saturate(1.2); opacity: 0; visibility: hidden; transform: translate(24px, -46%) perspective(1000px) rotateY(-2deg); transition: opacity var(--motion-base) var(--ease-out), transform var(--motion-base) var(--ease-out), visibility var(--motion-base); }

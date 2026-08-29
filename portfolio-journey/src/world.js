@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
-import { OBJLoader } from 'three/addons/loaders/OBJLoader.js';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { Sky } from 'three/addons/objects/Sky.js';
 import { COLORS, DISTRICTS, PROJECTS, ROAD_POINTS, WORLD_BOUNDS } from './data.js';
 
@@ -67,19 +67,111 @@ function createProjectTexture(project, dark = true) {
 function createSignTexture(title, subtitle, accent = '#dc7431') {
   return createCanvasTexture((context, width, height) => {
     context.clearRect(0, 0, width, height);
-    context.fillStyle = 'rgba(17,19,21,.94)';
+    const frameInset = 6;
+    const frameRadius = 12;
+    const panelInset = 15;
+    const panelRadius = 7;
+
+    // Ground shadow — anchors the sign as a physical panel instead of a glowing card.
+    context.save();
+    context.shadowColor = 'rgba(0,0,0,.55)';
+    context.shadowBlur = 18;
+    context.shadowOffsetY = 8;
+    context.fillStyle = 'rgba(0,0,0,.001)';
     context.beginPath();
-    context.roundRect(8, 8, width - 16, height - 16, 22);
+    context.roundRect(frameInset, frameInset, width - frameInset * 2, height - frameInset * 2, frameRadius);
     context.fill();
-    context.strokeStyle = 'rgba(244,234,214,.2)';
-    context.lineWidth = 2;
+    context.restore();
+
+    // Extruded aluminum frame — vertical bevel gradient, like real gantry sign stock.
+    const frameGrad = context.createLinearGradient(0, 0, 0, height);
+    frameGrad.addColorStop(0, '#cfd2d4');
+    frameGrad.addColorStop(0.12, '#9a9ea1');
+    frameGrad.addColorStop(0.5, '#65686b');
+    frameGrad.addColorStop(0.88, '#3d3f41');
+    frameGrad.addColorStop(1, '#2a2b2c');
+    context.beginPath();
+    context.roundRect(frameInset, frameInset, width - frameInset * 2, height - frameInset * 2, frameRadius);
+    context.fillStyle = frameGrad;
+    context.fill();
+    context.lineWidth = 1;
+    context.strokeStyle = 'rgba(0,0,0,.35)';
     context.stroke();
+
+    // Sign face — dark powder-coat panel set inside the frame.
+    const faceGrad = context.createLinearGradient(0, panelInset, 0, height - panelInset);
+    faceGrad.addColorStop(0, '#1c1e21');
+    faceGrad.addColorStop(1, '#101214');
+    context.beginPath();
+    context.roundRect(panelInset, panelInset, width - panelInset * 2, height - panelInset * 2, panelRadius);
+    context.fillStyle = faceGrad;
+    context.fill();
+    context.save();
+    context.clip();
+
+    // Faint brushed-panel striping for material texture.
+    context.globalAlpha = 0.035;
+    context.strokeStyle = '#ffffff';
+    context.lineWidth = 1;
+    for (let x = panelInset; x < width - panelInset; x += 5) {
+      context.beginPath();
+      context.moveTo(x, panelInset);
+      context.lineTo(x, height - panelInset);
+      context.stroke();
+    }
+    context.globalAlpha = 1;
+
+    // Reflective coating sheen across the upper third.
+    const sheen = context.createLinearGradient(0, panelInset, 0, height * 0.55);
+    sheen.addColorStop(0, 'rgba(255,255,255,.1)');
+    sheen.addColorStop(1, 'rgba(255,255,255,0)');
+    context.fillStyle = sheen;
+    context.fillRect(panelInset, panelInset, width - panelInset * 2, height * 0.55 - panelInset);
+
+    // Accent rule under the header row.
     context.fillStyle = accent;
-    context.font = '700 18px ui-monospace, monospace';
-    context.fillText(subtitle, 30, 48);
-    context.fillStyle = '#f4ead6';
-    context.font = '400 44px Georgia, serif';
-    context.fillText(title, 30, 104);
+    context.fillRect(panelInset, 46, width - panelInset * 2, 2.5);
+    context.restore();
+
+    // Corner rivets on the frame, like bolted sign stock.
+    const boltInset = 16;
+    const boltPositions = [
+      [boltInset, boltInset],
+      [width - boltInset, boltInset],
+      [boltInset, height - boltInset],
+      [width - boltInset, height - boltInset],
+    ];
+    boltPositions.forEach(([bx, by]) => {
+      const boltGrad = context.createRadialGradient(bx - 1.4, by - 1.4, 0.4, bx, by, 4.2);
+      boltGrad.addColorStop(0, '#eceef0');
+      boltGrad.addColorStop(0.55, '#8b8e91');
+      boltGrad.addColorStop(1, '#3c3e40');
+      context.fillStyle = boltGrad;
+      context.beginPath();
+      context.arc(bx, by, 4.2, 0, Math.PI * 2);
+      context.fill();
+    });
+
+    // Subtitle — small caps label row with accent marker.
+    context.fillStyle = accent;
+    context.beginPath();
+    context.arc(40, 34, 3.6, 0, Math.PI * 2);
+    context.fill();
+    context.font = '700 16px "Segoe UI", Arial, sans-serif';
+    context.letterSpacing = '2px';
+    context.fillStyle = accent;
+    context.fillText(subtitle.toUpperCase(), 51, 39);
+    context.letterSpacing = '0px';
+
+    // Title — bold road-sign sans-serif with subtle emboss.
+    context.save();
+    context.shadowColor = 'rgba(0,0,0,.6)';
+    context.shadowBlur = 4;
+    context.shadowOffsetY = 2;
+    context.fillStyle = '#f5f1e8';
+    context.font = '800 42px "Segoe UI", Arial, sans-serif';
+    context.fillText(title, 35, 100);
+    context.restore();
   }, 540, 132);
 }
 
@@ -554,9 +646,10 @@ function createTreeInstances(scene, road) {
 function createDetailedTreeInstances(scene, road) {
   const count = 20;
   const bucketCount = 5;
-  const objLoader = new OBJLoader();
-  objLoader.setPath('models/');
-  objLoader.load('tree-detailed.obj', (source) => {
+  const gltfLoader = new GLTFLoader();
+  gltfLoader.setPath('models/');
+  gltfLoader.load('tree-detailed.glb', (gltf) => {
+    const source = gltf.scene;
     let leavesGeometry = null;
     let trunkGeometry = null;
     source.traverse((child) => {
@@ -1053,9 +1146,10 @@ function carMaterialFor(name) {
 function createCar() {
   const car = new THREE.Group();
 
-  const objLoader = new OBJLoader();
-  objLoader.setPath('models/');
-  objLoader.load('car.obj', (obj) => {
+  const gltfLoader = new GLTFLoader();
+  gltfLoader.setPath('models/');
+  gltfLoader.load('car.glb', (gltf) => {
+      const obj = gltf.scene;
       const box = new THREE.Box3().setFromObject(obj);
       const size = box.getSize(new THREE.Vector3());
       // This file has no o/g boundaries, so the whole model loads as one

@@ -52,18 +52,39 @@ export function SoftwarePortfolioShell({
       <div className="relative min-h-0 overflow-hidden">
         {mode === "game" && (
           <div
-            className={`pointer-events-none absolute inset-0 z-10 grid place-items-center bg-[#111315] transition-opacity duration-300 ${
+            className={`pointer-events-none absolute inset-0 z-10 grid place-items-center bg-[#111315] transition-opacity duration-500 ${
               loaded ? "opacity-0" : "opacity-100"
             }`}
             role="status"
             aria-live="polite"
             aria-hidden={loaded}
           >
-            <div className="grid justify-items-center gap-3">
-              <span className="grid size-12 place-items-center rounded-[0.875rem] border border-white/12 font-display text-2xl text-[#dc7431]">
-                C
-              </span>
-              <span className="text-sm text-[#b7afa2]">Preparing the project road</span>
+            <div
+              className="grid justify-items-center gap-6"
+              style={{ animation: "walker-fade-in 0.6s ease-out both" }}
+            >
+              <svg
+                viewBox="0 0 100 130"
+                className="walker-figure h-28 w-auto"
+                fill="none"
+                stroke="#f4ead6"
+                strokeWidth="3.4"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <circle cx="50" cy="16" r="9.5" />
+                <line x1="50" y1="26" x2="50" y2="70" />
+                <line className="walker-arm-l" x1="50" y1="35" x2="34" y2="55" />
+                <line className="walker-arm-r" x1="50" y1="35" x2="66" y2="55" />
+                <line className="walker-leg-l" x1="50" y1="70" x2="33" y2="105" />
+                <line className="walker-leg-r" x1="50" y1="70" x2="67" y2="105" />
+                <line x1="12" y1="112" x2="88" y2="112" stroke="#dc7431" strokeWidth="2.4" opacity="0.55" />
+              </svg>
+              <div className="grid justify-items-center gap-2">
+                <span className="font-display text-lg tracking-wide text-[#f4ead6]">Entering the journey</span>
+                <span className="text-xs uppercase tracking-[0.28em] text-[#8a8479]">Preparing the project road</span>
+              </div>
             </div>
           </div>
         )}

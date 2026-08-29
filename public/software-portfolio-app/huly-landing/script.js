@@ -187,60 +187,41 @@ if (zkOrbit) {
 }
 
 const hero = document.querySelector('.hero');
-const heroVideo = document.querySelector('.hero-light-video');
 const heroCursorStage = document.querySelector('[data-hero-cursor]');
 const hasFinePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-const githubCanvas = document.querySelector('[data-github-rive]');
-const githubStage = document.querySelector('[data-github-stage]');
 
-if (githubCanvas && githubStage && window.rive) {
-  window.rive.RuntimeLoader.setWasmUrl('assets/rive.wasm');
-  let githubAnimation;
-  const resizeGithubAnimation = () => githubAnimation?.resizeDrawingSurfaceToCanvas();
-
-  githubAnimation = new window.rive.Rive({
-    src: 'assets/interface-github.riv',
-    canvas: githubCanvas,
-    autoplay: !prefersReducedMotion,
-    layout: new window.rive.Layout({
-      fit: window.rive.Fit.Contain,
-      alignment: window.rive.Alignment.Center
-    }),
-    onLoad: () => {
-      resizeGithubAnimation();
-      githubStage.classList.add('rive-ready');
-      if (prefersReducedMotion) githubAnimation.pause();
+const lazyVideos = document.querySelectorAll('[data-lazy-video]');
+if (lazyVideos.length) {
+  const loadAndPlay = (video) => {
+    const source = video.querySelector('source[data-src]');
+    if (source) {
+      source.src = source.dataset.src;
+      delete source.dataset.src;
+      video.load();
     }
-  });
+    video.play().catch(() => {});
+  };
 
-  window.addEventListener('resize', resizeGithubAnimation, { passive: true });
-}
-
-const githubVideo = document.querySelector('.github-glow-video');
-if (githubVideo) {
-  const tryPlayGithubVideo = () => githubVideo.play().catch(() => {});
-  if (githubVideo.readyState >= 2) tryPlayGithubVideo();
-  else githubVideo.addEventListener('loadeddata', tryPlayGithubVideo, { once: true });
-  document.addEventListener('visibilitychange', () => {
-    if (!document.hidden) tryPlayGithubVideo();
-  });
-}
-
-if (hero && heroVideo) {
-  const showMotionVideo = () => hero.classList.add('motion-ready');
-
-  if (prefersReducedMotion) {
-    heroVideo.pause();
-  } else if (heroVideo.readyState >= 3) {
-    showMotionVideo();
+  if (!('IntersectionObserver' in window)) {
+    lazyVideos.forEach(loadAndPlay);
   } else {
-    heroVideo.addEventListener('canplay', showMotionVideo, { once: true });
+    const videoObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          loadAndPlay(entry.target);
+          videoObserver.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '200px 0px' });
+
+    lazyVideos.forEach((video) => videoObserver.observe(video));
   }
 
   document.addEventListener('visibilitychange', () => {
-    if (prefersReducedMotion) return;
-    if (document.hidden) heroVideo.pause();
-    else heroVideo.play().catch(() => {});
+    if (document.hidden) return;
+    lazyVideos.forEach((video) => {
+      if (!video.querySelector('source[data-src]')) video.play().catch(() => {});
+    });
   });
 }
 
@@ -288,7 +269,7 @@ const cardStack = document.querySelector('[data-card-stack]');
 if (cardStack) {
   const stackCards = Array.from(cardStack.querySelectorAll('.stack-card'));
   const HOLD_MS = 2000;
-  const TRANS_MS = 850;
+  const TRANS_MS = 1100;
   let stackIdx = 0;
 
   const startCardStack = () => {
