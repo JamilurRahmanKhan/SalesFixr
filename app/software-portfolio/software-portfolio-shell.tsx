@@ -8,7 +8,7 @@ export function SoftwarePortfolioShell({
   page = "index",
 }: {
   mode?: "preview" | "game";
-  page?: "index" | "services";
+  page?: "index" | "services" | "about" | "contact";
 }) {
   const router = useRouter();
   const [loaded, setLoaded] = useState(false);
@@ -42,6 +42,10 @@ export function SoftwarePortfolioShell({
         router.push("/software-portfolio");
       } else if (event.data === "go-to-services") {
         router.push("/services");
+      } else if (event.data === "go-to-about") {
+        router.push("/about");
+      } else if (event.data === "go-to-contact") {
+        router.push("/contact");
       } else if (event.data === "go-to-home") {
         router.push("/software");
       }
