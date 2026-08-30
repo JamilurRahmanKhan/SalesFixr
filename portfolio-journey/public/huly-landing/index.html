@@ -18,7 +18,8 @@
   <main id="main">
     <section class="hero dark-section" id="hero">
       <div class="hero-top-smoke" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
-      <div class="hero-aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+      <div class="hero-aurora" aria-hidden="true"><i></i><i></i><i></i><i class="hero-ember"></i></div>
+      <div class="hero-beam-fall" aria-hidden="true"><i></i><i></i></div>
       <svg width="0" height="0" style="position:absolute" aria-hidden="true">
         <filter id="heroGrain">
           <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch" result="n"/>
@@ -50,7 +51,7 @@
             <div class="raycast-wallpaper" aria-hidden="true"><i></i><i></i><i></i></div>
             <section class="raycast-command" aria-live="polite">
               <article class="raycast-panel is-active" data-raycast-panel="clipboard" role="tabpanel">
-                <header><button tabindex="-1">◆</button><strong>Search active projects...</strong><span>Sprint 24⌄</span></header>
+                <header><button tabindex="-1">◆</button><strong>Search active projects...</strong><span>Sprint 24<i class="caret"></i></span></header>
                 <div class="raycast-command-body clipboard-layout">
                   <aside><b>Development Queue</b><em class="is-selected">● &nbsp; SaaS Dashboard</em><em>◈ &nbsp; E-commerce API</em><em>◇ &nbsp; Mobile Banking</em><em>○ &nbsp; Cloud Migration</em></aside>
                   <div class="clipboard-preview"><div class="dev-code-preview"><span><i>01</i><b>const</b> app = createPlatform();</span><span><i>02</i>app.connect(database);</span><span><i>03</i><b>await</b> app.deploy();</span><em>✓ Build completed in 42s</em></div><dl><dt>Project Overview</dt><dd><b>Frontend</b><span>React + TypeScript</span></dd><dd><b>Backend</b><span>Node.js API</span></dd><dd><b>Progress</b><span>84% complete</span></dd><dd><b>Release</b><span>Friday · 14:00</span></dd></dl></div>
@@ -58,12 +59,12 @@
                 <footer><span>◆ &nbsp; Project Command Center</span><b>Open Project &nbsp; ↵ &nbsp; | &nbsp; Actions &nbsp; ⌘ K</b></footer>
               </article>
               <article class="raycast-panel" data-raycast-panel="ai" role="tabpanel" hidden>
-                <header><button tabindex="-1">✦</button><strong>Ask the engineering copilot...</strong><span>Code Model⌄</span></header>
+                <header><button tabindex="-1">✦</button><strong>Ask the engineering copilot...</strong><span>Code Model<i class="caret"></i></span></header>
                 <div class="ai-chat-screen"><p class="ai-prompt">Review the checkout API for production</p><div class="ai-answer"><i>✦</i><div><b>Engineering review complete</b><p>Add idempotency keys, validate webhook signatures, and cache product queries to reduce response time.</p><span>12 files analyzed · 3 improvements found</span></div></div><div class="ai-actions"><span>Apply fixes</span><span>View diff</span><span>Create PR</span></div></div>
                 <footer><span>✦ &nbsp; AI Engineering Copilot</span><b>New Review &nbsp; ⌘ N &nbsp; | &nbsp; Actions &nbsp; ⌘ K</b></footer>
               </article>
               <article class="raycast-panel" data-raycast-panel="emoji" role="tabpanel" hidden>
-                <header><button tabindex="-1">▦</button><strong>Search technologies...</strong><span>Full Stack⌄</span></header>
+                <header><button tabindex="-1">▦</button><strong>Search technologies...</strong><span>Full Stack<i class="caret"></i></span></header>
                 <div class="emoji-screen"><nav>Frontend &nbsp; · &nbsp; Backend &nbsp; · &nbsp; Cloud &nbsp; · &nbsp; Data</nav><div class="emoji-grid dev-stack-grid">
 <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React"/></span>
 <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript"/></span>
@@ -92,7 +93,7 @@
                 <footer><span>⌁ &nbsp; Delivery Analytics</span><b>Export Report &nbsp; ↵ &nbsp; | &nbsp; Date Range &nbsp; ⌘ D</b></footer>
               </article>
               <article class="raycast-panel" data-raycast-panel="windows" role="tabpanel" hidden>
-                <header><button tabindex="-1">⬡</button><strong>Search deployment environments...</strong><span>Production⌄</span></header>
+                <header><button tabindex="-1">⬡</button><strong>Search deployment environments...</strong><span>Production<i class="caret"></i></span></header>
                 <div class="window-screen"><aside><b>Cloud Environments</b><em class="is-selected">Production <kbd>Healthy</kbd></em><em>Staging <kbd>Ready</kbd></em><em>Preview <kbd>12 builds</kbd></em><em>Development <kbd>Active</kbd></em></aside><div class="monitor-preview"><div class="monitor-grid"><i></i><i></i><i></i><i></i><span></span></div><b>Production Deployment</b><p>API, web app, database, and CDN are operating normally.</p></div></div>
                 <footer><span>⬡ &nbsp; Cloud Operations</span><b>Deploy Release &nbsp; ↵ &nbsp; | &nbsp; Logs &nbsp; ⌘ L</b></footer>
               </article>
@@ -111,6 +112,20 @@
     </section>
 
     <section class="touch-tomorrow light-section section-pad" id="touch-tomorrow">
+      <div class="ttbg" aria-hidden="true">
+        <span class="ttbg-dotgrid ttbg-dotgrid--left"></span>
+        <span class="ttbg-dotgrid ttbg-dotgrid--right"></span>
+        <svg class="ttbg-lines" viewBox="0 0 1200 800" preserveAspectRatio="none">
+          <path d="M40,340 C110,300 190,300 240,220 C280,150 300,90 380,20" />
+          <path d="M1160,340 C1090,300 1010,300 960,220 C920,150 900,90 820,20" />
+        </svg>
+        <span class="ttbg-dot" style="--x:12%;--y:32%"></span>
+        <span class="ttbg-dot" style="--x:88%;--y:22%"></span>
+        <span class="ttbg-dot" style="--x:92%;--y:56%"></span>
+        <span class="ttbg-dot" style="--x:6%;--y:68%"></span>
+        <span class="ttbg-dot ttbg-dot--sm" style="--x:22%;--y:12%"></span>
+        <span class="ttbg-dot ttbg-dot--sm" style="--x:78%;--y:70%"></span>
+      </div>
       <div class="container narrow">
         <div class="section-intro centered reveal">
           <h2>Shaping tomorrow, <span>today</span></h2>

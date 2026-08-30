@@ -269,7 +269,7 @@ const cardStack = document.querySelector('[data-card-stack]');
 if (cardStack) {
   const stackCards = Array.from(cardStack.querySelectorAll('.stack-card'));
   const HOLD_MS = 2000;
-  const TRANS_MS = 1100;
+  const TRANS_MS = 950;
   let stackIdx = 0;
 
   const startCardStack = () => {

@@ -35,7 +35,6 @@ export function SoftwarePortfolioShell({
   }, []);
 
   useEffect(() => {
-    if (mode !== "preview") return;
     function onMessage(event: MessageEvent) {
       if (event.origin !== window.location.origin) return;
       if (event.data === "enter-journey" || event.data === "go-to-software-portfolio") {

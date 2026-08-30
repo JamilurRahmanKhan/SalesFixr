@@ -6,6 +6,7 @@ const experience = document.querySelector('#experience');
 const canvas = document.querySelector('#world');
 const fallback = document.querySelector('#webgl-fallback');
 const introFrame = document.querySelector('#intro-frame');
+const backButton = document.querySelector('#back-button');
 const autoTourLaunch = document.querySelector('#auto-tour-launch');
 const resetButton = document.querySelector('#reset-car');
 const cameraButton = document.querySelector('#camera-toggle');
@@ -809,6 +810,13 @@ window.addEventListener('message', (event) => {
   }
 });
 if (journeyMode === 'game') setStarted();
+backButton.addEventListener('click', () => {
+  if (window.top !== window.self) {
+    window.top.postMessage('go-to-home', window.top.location.origin);
+  } else {
+    window.location.href = '/software';
+  }
+});
 autoTourLaunch.addEventListener('click', startAutoJourney);
 tourPauseButton.addEventListener('click', toggleAutoPause);
 tourExitButton.addEventListener('click', () => stopAutoTour(true));
