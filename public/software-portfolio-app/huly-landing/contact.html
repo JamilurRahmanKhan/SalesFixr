@@ -33,6 +33,7 @@
         </div>
         <label class="ctc-field"><span>Company</span><input type="text" name="company" placeholder="Enter your company name (optional)"></label>
         <label class="ctc-field"><span>Message</span><textarea name="message" rows="5" placeholder="Leave a message" required></textarea></label>
+        <input class="ctc-hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
         <button class="abt-hero-cta" type="submit">Send message</button>
         <p class="ctc-form-note" data-ctc-note></p>
       </form>
@@ -62,6 +63,15 @@
     </section>
 
   </main>
+
+  <div class="ctc-toast-backdrop" data-ctc-toast hidden>
+    <div class="ctc-toast" role="alertdialog" aria-labelledby="ctc-toast-title">
+      <button class="ctc-toast-close" type="button" data-ctc-toast-close aria-label="Close"><svg viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+      <span class="ctc-toast-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <h2 id="ctc-toast-title">Message sent!</h2>
+      <p>Thanks for reaching out — we've got your message and will reply within one business day.</p>
+    </div>
+  </div>
 
   <footer class="global-footer">
     <div class="container gfooter-social">
@@ -120,14 +130,52 @@
     })();
 
     (function () {
+      var SHEET_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbz4fq3YMavPiVzHDdfPXcKKIEA8qWgS0YdOSOVltE4RWk7MUjtik-KxhuPVDPz0lFuA/exec';
       var form = document.querySelector('[data-ctc-form]');
       var note = document.querySelector('[data-ctc-note]');
+      var toast = document.querySelector('[data-ctc-toast]');
+      var toastClose = document.querySelector('[data-ctc-toast-close]');
+      var toastTimer;
+      function showToast() {
+        toast.hidden = false;
+        requestAnimationFrame(function () { toast.classList.add('is-visible'); });
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(hideToast, 5000);
+      }
+      function hideToast() {
+        toast.classList.remove('is-visible');
+        clearTimeout(toastTimer);
+        setTimeout(function () { toast.hidden = true; }, 250);
+      }
+      toastClose.addEventListener('click', hideToast);
+      toast.addEventListener('click', function (e) { if (e.target === toast) hideToast(); });
       if (!form) return;
+      var btn = form.querySelector('button[type="submit"]');
       form.addEventListener('submit', function (e) {
         e.preventDefault();
-        note.textContent = "Thanks — we've got your message and will reply within one business day.";
-        note.classList.add('is-visible');
-        form.reset();
+        if (form.website.value) return; // honeypot tripped, silently drop
+        var data = {
+          name: form.name.value,
+          email: form.email.value,
+          company: form.company.value,
+          message: form.message.value
+        };
+        btn.disabled = true;
+        note.classList.remove('is-error', 'is-visible');
+        fetch(SHEET_WEB_APP_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'text/plain' },
+          body: JSON.stringify(data)
+        }).then(function () {
+          form.reset();
+          showToast();
+        }).catch(function () {
+          note.textContent = 'Something went wrong sending your message. Please try again or email us directly.';
+          note.classList.add('is-error', 'is-visible');
+        }).finally(function () {
+          btn.disabled = false;
+        });
       });
     })();
   </script>
