@@ -8,7 +8,7 @@ export function SoftwarePortfolioShell({
   page = "index",
 }: {
   mode?: "preview" | "game";
-  page?: "index" | "services" | "about" | "contact";
+  page?: "index" | "services" | "about" | "contact" | "privacy";
 }) {
   const router = useRouter();
   const [loaded, setLoaded] = useState(false);

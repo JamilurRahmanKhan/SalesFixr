@@ -1085,6 +1085,12 @@ a:focus-visible,button:focus-visible{outline:2px solid #86a3ff;outline-offset:4p
 .abt-rule--top{margin-bottom:40px}
 
 .abt-hero{--abt-bg:#ffffff;background:var(--abt-bg);padding:28px 24px 0;text-align:left}
+.legal-section{max-width:1120px;margin:0 auto;padding:56px 24px 96px}
+.legal-prose{max-width:720px;margin:0 auto;color:#444;font-size:15px;line-height:1.7}
+.legal-prose h2{margin:36px 0 12px;font-size:20px;font-weight:800;color:#111;letter-spacing:-.01em}
+.legal-prose h2:first-child{margin-top:0}
+.legal-prose p{margin:0 0 4px}
+.legal-prose a{color:#111;text-decoration:underline}
 .abt-hero-topbar{display:flex;align-items:center;justify-content:flex-end;gap:20px;font-size:12px;color:#666;padding:14px 0 64px}
 .abt-hero-time{color:#666;font-variant-numeric:tabular-nums}
 .abt-hero-status{display:inline-flex;align-items:center;gap:8px;color:#666}
