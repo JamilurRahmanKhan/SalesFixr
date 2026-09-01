@@ -11,8 +11,7 @@ const main = await readFile(resolve(root, 'src/main.js'), 'utf8');
 const world = await readFile(resolve(root, 'src/world.js'), 'utf8');
 const data = await readFile(resolve(root, 'src/data.js'), 'utf8');
 const hostRoot = resolve(root, '..');
-const softwareCard = await readFile(resolve(hostRoot, 'app/components/service-cards/software-development.tsx'), 'utf8');
-const journeyShell = await readFile(resolve(hostRoot, 'app/software-portfolio/software-portfolio-shell.tsx'), 'utf8');
+const journeyShell = await readFile(resolve(hostRoot, 'components/layout/SoftwarePortfolioShell.tsx'), 'utf8');
 
 const checks = [
   ['semantic main fallback', html.includes('id="project-index"')],
@@ -42,7 +41,7 @@ const checks = [
   ['automatic journey choice', html.includes('id="start-auto"') && html.includes('I’ll drive myself')],
   ['automatic spline driving', main.includes('updateAutoJourney') && main.includes('setCarOnAutoRoute')],
   ['three-second portfolio stops', main.includes('AUTO_STOP_DURATION = 3') && main.includes('stopRemaining = AUTO_STOP_DURATION') && html.includes('three-second stops')],
-  ['business-site portfolio route', softwareCard.includes('href="/software-portfolio"') && journeyShell.includes('/software-portfolio-app/index.html')],
+  ['business-site portfolio route', journeyShell.includes('/software-portfolio-app/index.html')],
   ['back and home recovery', journeyShell.includes('returnToPreviousPage') && journeyShell.includes('href="/"')],
   ['automatic tour controls', html.includes('id="tour-pause"') && html.includes('id="tour-exit"')],
   ['manual takeover', main.includes('stopAutoTour(true)') && main.includes('setInput')],

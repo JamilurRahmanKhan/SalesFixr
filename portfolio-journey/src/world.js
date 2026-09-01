@@ -647,7 +647,7 @@ function createDetailedTreeInstances(scene, road) {
   const count = 20;
   const bucketCount = 5;
   const gltfLoader = new GLTFLoader();
-  gltfLoader.setPath('models/');
+  gltfLoader.setPath(`${import.meta.env.BASE_URL}models/`);
   gltfLoader.load('tree-detailed.glb', (gltf) => {
     const source = gltf.scene;
     let leavesGeometry = null;
@@ -1104,7 +1104,7 @@ const carTextureLoader = new THREE.TextureLoader();
 const carTextureCache = {};
 function carTexture(file) {
   if (!carTextureCache[file]) {
-    const tex = carTextureLoader.load('models/textures/' + file);
+    const tex = carTextureLoader.load(`${import.meta.env.BASE_URL}models/textures/` + file);
     tex.colorSpace = THREE.SRGBColorSpace;
     carTextureCache[file] = tex;
   }
@@ -1147,7 +1147,7 @@ function createCar() {
   const car = new THREE.Group();
 
   const gltfLoader = new GLTFLoader();
-  gltfLoader.setPath('models/');
+  gltfLoader.setPath(`${import.meta.env.BASE_URL}models/`);
   gltfLoader.load('car.glb', (gltf) => {
       const obj = gltf.scene;
       const box = new THREE.Box3().setFromObject(obj);

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { SoftwarePortfolioShell } from "./software-portfolio-shell";
+import { SoftwarePortfolioShell } from "@/components/layout/SoftwarePortfolioShell";
 
 export const metadata: Metadata = {
   title: "Software portfolio",
@@ -8,5 +8,5 @@ export const metadata: Metadata = {
 };
 
 export default function SoftwarePortfolioPage() {
-  return <SoftwarePortfolioShell mode="game" />;
+  return <SoftwarePortfolioShell />;
 }
