@@ -1,8 +1,8 @@
 const TEAM = [
-  { letter: "J", gradient: "#f2c9a0,#c97a4e", name: "Jamilur R.", role: "Founder & Engineer" },
-  { letter: "S", gradient: "#a0c9f2,#4e7ac9", name: "Sara N.", role: "Product Design" },
-  { letter: "M", gradient: "#c9a0e0,#7a4ec9", name: "Marcus T.", role: "Backend Engineering" },
-  { letter: "L", gradient: "#a0e0c0,#4ec98f", name: "Lena K.", role: "QA & Delivery" },
+  { letter: "E", gradient: "#f2c9a0,#c97a4e", name: "Emon Bepari", role: "Project Manager" },
+  { letter: "J", gradient: "#a0c9f2,#4e7ac9", name: "Jamilur Rahman Khan", role: "Lead Engineer" },
+  { letter: "T", gradient: "#c9a0e0,#7a4ec9", name: "Tahamid Alif", role: "Research Analyst" },
+  { letter: "N", gradient: "#a0e0c0,#4ec98f", name: "Nahid Ahmed Joy", role: "QA & Testing" },
 ];
 
 export function TeamGrid() {
