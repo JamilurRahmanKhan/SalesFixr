@@ -2,7 +2,7 @@ import { access } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { spawnSync } from 'node:child_process';
 
-const outDirMarker = resolve(import.meta.dirname, '../../public/software-portfolio-app/index.html');
+const outDirMarker = resolve(import.meta.dirname, '../../public/software-portfolio-app/game.html');
 
 try {
   await access(outDirMarker);

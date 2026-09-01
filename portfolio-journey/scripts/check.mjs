@@ -2,10 +2,10 @@ import { access, readFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 
 const root = resolve(import.meta.dirname, '..');
-const required = ['index.html', 'styles.css', 'src/main.js', 'src/world.js', 'src/data.js'];
+const required = ['game.html', 'styles.css', 'src/main.js', 'src/world.js', 'src/data.js'];
 for (const file of required) await access(resolve(root, file));
 
-const html = await readFile(resolve(root, 'index.html'), 'utf8');
+const html = await readFile(resolve(root, 'game.html'), 'utf8');
 const css = await readFile(resolve(root, 'styles.css'), 'utf8');
 const main = await readFile(resolve(root, 'src/main.js'), 'utf8');
 const world = await readFile(resolve(root, 'src/world.js'), 'utf8');
@@ -41,7 +41,7 @@ const checks = [
   ['automatic journey choice', html.includes('id="start-auto"') && html.includes('I’ll drive myself')],
   ['automatic spline driving', main.includes('updateAutoJourney') && main.includes('setCarOnAutoRoute')],
   ['three-second portfolio stops', main.includes('AUTO_STOP_DURATION = 3') && main.includes('stopRemaining = AUTO_STOP_DURATION') && html.includes('three-second stops')],
-  ['business-site portfolio route', journeyShell.includes('/software-portfolio-app/index.html')],
+  ['business-site portfolio route', journeyShell.includes('/software-portfolio-app/game.html')],
   ['back and home recovery', journeyShell.includes('returnToPreviousPage') && journeyShell.includes('href="/"')],
   ['automatic tour controls', html.includes('id="tour-pause"') && html.includes('id="tour-exit"')],
   ['manual takeover', main.includes('stopAutoTour(true)') && main.includes('setInput')],

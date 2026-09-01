@@ -98,7 +98,7 @@ export function SoftwarePortfolioShell() {
         <iframe
           ref={frameRef}
           title="Interactive CompassNCrew software portfolio"
-          src="/software-portfolio-app/index.html?mode=game"
+          src="/software-portfolio-app/game.html?mode=game"
           className="block h-full w-full border-0 bg-[#111315]"
           onLoad={() => setLoaded(true)}
           allow="autoplay; fullscreen"

@@ -9,6 +9,9 @@ export default defineConfig({
     emptyOutDir: true,
     chunkSizeWarningLimit: 600,
     rollupOptions: {
+      // Next.js's static export silently drops any public/ file named
+      // "index.html" at a non-root path, so the entry is named game.html.
+      input: fileURLToPath(new URL('./game.html', import.meta.url)),
       output: {
         manualChunks: {
           three: ['three'],
