@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: var(--font-instrument-serif), Georgia, "Times New Roman", serif;
+}
+
+html {
+  background: #111315;
+}
+
+body {
+  background: #111315;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+body.journey-mode {
+  overflow: hidden;
+}
+
+@keyframes walker-arm-l {
+  0%, 100% { transform: rotate(-26deg); }
+  50% { transform: rotate(24deg); }
+}
+@keyframes walker-arm-r {
+  0%, 100% { transform: rotate(26deg); }
+  50% { transform: rotate(-24deg); }
+}
+@keyframes walker-leg-l {
+  0%, 100% { transform: rotate(24deg); }
+  50% { transform: rotate(-26deg); }
+}
+@keyframes walker-leg-r {
+  0%, 100% { transform: rotate(-24deg); }
+  50% { transform: rotate(26deg); }
+}
+@keyframes walker-bob {
+  0%, 100% { transform: translateY(0); }
+  25% { transform: translateY(-3px); }
+  50% { transform: translateY(0); }
+  75% { transform: translateY(-3px); }
+}
+@keyframes walker-fade-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.walker-figure {
+  animation: walker-bob 0.86s ease-in-out infinite;
+}
+.walker-arm-l {
+  transform-box: fill-box;
+  transform-origin: 50% 0%;
+  animation: walker-arm-l 0.86s ease-in-out infinite;
+}
+.walker-arm-r {
+  transform-box: fill-box;
+  transform-origin: 50% 0%;
+  animation: walker-arm-r 0.86s ease-in-out infinite;
+}
+.walker-leg-l {
+  transform-box: fill-box;
+  transform-origin: 50% 0%;
+  animation: walker-leg-l 0.86s ease-in-out infinite;
+}
+.walker-leg-r {
+  transform-box: fill-box;
+  transform-origin: 50% 0%;
+  animation: walker-leg-r 0.86s ease-in-out infinite;
+}
