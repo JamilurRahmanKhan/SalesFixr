@@ -7,8 +7,8 @@ const FAQS = [
   { q: "Are you able to work with an existing product?", a: "Yes — whether it's an incremental update or a full rebuild, we align the work with your existing codebase and goals." },
   { q: "What are your payment terms?", a: "We offer flexible milestone-based plans that scale with the size of the engagement." },
   { q: "How do I get started?", a: "Book a call whenever you're ready — getting your project moving is our top priority." },
-  { q: "Can you connect a custom domain?", a: "Yes — share your domain details and we'll take care of the setup, or guide you through it yourself." },
-  { q: "Do you help with content or copy?", a: "Yes, we can help shape product copy and messaging alongside the build when it's part of the scope." },
+  { q: "Do you work with our existing tech stack and infrastructure?", a: "Yes — we integrate with your current stack, cloud provider, and tools rather than forcing a rebuild around ours." },
+  { q: "Do you provide ongoing maintenance and support after launch?", a: "Yes, we offer dedicated maintenance and support plans to keep your software secure, updated, and running smoothly after launch." },
 ];
 
 export function Faq() {
