@@ -1078,7 +1078,10 @@ a:focus-visible,button:focus-visible{outline:2px solid #86a3ff;outline-offset:4p
 }
 
 /* ===== About page (light) ===== */
-.abt-hero,.abt-work,.abt-benefits,.abt-get,.abt-stack,.abt-approach,.abt-faq,.abt-team{--abt-bg:#ffffff;--abt-panel:#f0f0f0;--abt-panel-2:#e6e6e6;--abt-border:rgba(0,0,0,.08);--abt-text:#111111;--abt-text-dim:#666666;--abt-text-mute:#999999;max-width:1120px;margin:0 auto;padding:64px 24px;position:relative}
+.abt-hero,.abt-story,.abt-work,.abt-benefits,.abt-get,.abt-stack,.abt-approach,.abt-faq,.abt-team{--abt-bg:#ffffff;--abt-panel:#f0f0f0;--abt-panel-2:#e6e6e6;--abt-border:rgba(0,0,0,.08);--abt-text:#111111;--abt-text-dim:#666666;--abt-text-mute:#999999;max-width:1120px;margin:0 auto;padding:64px 24px;position:relative}
+.abt-story .abt-heading{text-align:left;margin-bottom:20px}
+.abt-story-text{max-width:640px;margin:0 0 16px;font-size:15px;line-height:1.7;color:var(--abt-text-dim)}
+.abt-story-mission{max-width:640px;margin:0;font-size:15px;line-height:1.7;font-weight:600;color:var(--abt-text)}
 .abt-heading{margin:0 0 12px;font-size:clamp(32px,4.5vw,52px);font-weight:800;letter-spacing:-.02em;color:var(--abt-text,#111);text-align:center}
 .abt-sub{margin:0 auto 40px;max-width:560px;text-align:center;font-size:15px;line-height:1.6;color:var(--abt-text-dim,#666)}
 
