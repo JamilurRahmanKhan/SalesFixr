@@ -101,13 +101,7 @@ export function RaycastDemo() {
           <span>Help</span>
         </div>
         <div className="raycast-menu-right">
-          <span>⌁</span>
-          <span>◉ 49</span>
-          <span>◈ 1</span>
-          <span>Lunch · 37m left</span>
-          <span>⌁</span>
-          <span>▰</span>
-          <span>Mon Jun 22&nbsp; 9:41 AM</span>
+          <span>● Build: Passing</span>
         </div>
       </div>
       <div className="raycast-desktop">
