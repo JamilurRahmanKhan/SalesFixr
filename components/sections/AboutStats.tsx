@@ -1,7 +1,7 @@
 const STATS = [
   { value: "4+", label: "Years in Business" },
-  { value: "10+", label: "Projects Delivered" },
-  { value: "12", label: "Service Offerings" },
+  { value: "30+", label: "Projects Delivered" },
+  { value: "34", label: "Service Offerings" },
   { value: "4", label: "Team Members" },
 ];
 
