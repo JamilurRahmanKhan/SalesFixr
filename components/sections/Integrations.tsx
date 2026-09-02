@@ -1,13 +1,15 @@
+import Image from "next/image";
+
 const STACK = [
-  { letter: "G", background: "#18181b", label: "GitHub" },
-  { letter: "S", background: "#611f69", label: "Slack" },
-  { letter: "J", background: "#0052cc", label: "Jira" },
-  { letter: "A", background: "#ff9900", color: "#111", label: "AWS" },
-  { letter: "S", background: "#635bff", label: "Stripe" },
-  { letter: "F", background: "#a259ff", label: "Figma" },
-  { letter: "N", background: "#000", border: "1px solid rgba(255,255,255,.25)", label: "Notion" },
-  { letter: "L", background: "#5e6ad2", label: "Linear" },
-  { letter: "V", background: "#fff", color: "#111", label: "Vercel" },
+  { icon: "github.png", label: "GitHub" },
+  { icon: "slack.png", label: "Slack" },
+  { icon: "jira.png", label: "Jira" },
+  { icon: "aws.png", label: "AWS" },
+  { icon: "stripe.png", label: "Stripe" },
+  { icon: "figma.png", label: "Figma" },
+  { icon: "notion.png", label: "Notion" },
+  { icon: "linear.png", label: "Linear" },
+  { icon: "vercel.png", label: "Vercel" },
 ];
 
 export function Integrations() {
@@ -18,11 +20,8 @@ export function Integrations() {
       <div className="abt-stack-grid">
         {STACK.map((chip) => (
           <span className="abt-stack-chip" key={chip.label}>
-            <span
-              className="abt-stack-icon"
-              style={{ background: chip.background, color: chip.color, border: chip.border }}
-            >
-              {chip.letter}
+            <span className="abt-stack-icon">
+              <Image src={`/images/tech-stack/${chip.icon}`} alt="" width={26} height={26} />
             </span>
             {chip.label}
           </span>

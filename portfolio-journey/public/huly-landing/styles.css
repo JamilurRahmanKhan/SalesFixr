@@ -1312,7 +1312,8 @@ a:focus-visible,button:focus-visible{outline:2px solid #86a3ff;outline-offset:4p
 
 .abt-stack-grid{display:flex;flex-wrap:wrap;justify-content:flex-start;gap:12px}
 .abt-stack-chip{display:inline-flex;align-items:center;gap:10px;background:var(--abt-panel);border:1px solid var(--abt-border);border-radius:999px;padding:8px 18px 8px 8px;font-size:14px;font-weight:500;color:#333}
-.abt-stack-icon{display:flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;font-size:12px;font-weight:700;color:#fff}
+.abt-stack-icon{display:flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:#fff;box-shadow:0 0 0 1px var(--abt-border);overflow:hidden;flex:none}
+.abt-stack-icon img{width:100%;height:100%;object-fit:contain;padding:3px}
 .abt-stack-chip--ghost{padding:8px 18px;font-weight:500;font-size:13px;background:transparent;border:1px dashed rgba(0,0,0,.2);color:var(--abt-text-mute)}
 
 .abt-steps{display:flex;align-items:flex-start;gap:0;flex-wrap:wrap}
