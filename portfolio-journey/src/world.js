@@ -1050,7 +1050,7 @@ function carMaterialFor(name) {
   // Everything else (body panels, McLaren/F1 decals, red line, logos) shares
   // the model's single main livery texture — this file has no .mtl, so this
   // is the only way to recover its actual white/black paint scheme.
-  const options = rule ? rule[1] : { map: carTexture('body.png'), roughness: 0.3, metalness: 0.25 };
+  const options = rule ? rule[1] : { map: carTexture('body.webp'), roughness: 0.3, metalness: 0.25 };
   return new THREE.MeshStandardMaterial(options);
 }
 
@@ -1181,7 +1181,12 @@ function createEnvironment(scene) {
   const sun = new THREE.DirectionalLight(0xffe1bd, 3.1);
   sun.position.set(-60, 75, -45);
   sun.castShadow = true;
-  sun.shadow.mapSize.set(2048, 2048);
+  // Halved on touch/narrow devices — the shadow map render pass (a full
+  // extra scene traversal at this resolution) is one of the heaviest
+  // single costs in the frame on mobile GPUs.
+  const isLowPower = navigator.maxTouchPoints > 0 || 'ontouchstart' in window || window.innerWidth < 700;
+  const shadowSize = isLowPower ? 1024 : 2048;
+  sun.shadow.mapSize.set(shadowSize, shadowSize);
   sun.shadow.camera.left = -85;
   sun.shadow.camera.right = 85;
   sun.shadow.camera.top = 85;

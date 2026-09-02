@@ -42,7 +42,12 @@ const minimap = document.querySelector('#minimap');
 const minimapContext = minimap.getContext('2d');
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const AUTO_STOP_DURATION = 3;
-document.documentElement.classList.toggle('has-touch', navigator.maxTouchPoints > 0 || 'ontouchstart' in window);
+const isTouchDevice = navigator.maxTouchPoints > 0 || 'ontouchstart' in window;
+// Phones/tablets get a lighter render profile — MSAA and soft (multi-tap)
+// shadow filtering are both disproportionately expensive on mobile GPUs
+// relative to their visual payoff at this scene's viewing distance.
+const isLowPower = isTouchDevice || window.innerWidth < 700;
+document.documentElement.classList.toggle('has-touch', isTouchDevice);
 
 const panelFields = {
   number: document.querySelector('#project-number'),
@@ -73,7 +78,7 @@ PROJECTS.forEach((project, index) => {
 
 let renderer;
 try {
-  renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: false, powerPreference: 'high-performance' });
+  renderer = new THREE.WebGLRenderer({ canvas, antialias: !isLowPower, alpha: false, powerPreference: 'high-performance' });
 } catch (error) {
   fallback.hidden = false;
   experience.dataset.ready = 'true';
@@ -84,8 +89,11 @@ renderer.outputColorSpace = THREE.SRGBColorSpace;
 renderer.toneMapping = THREE.ACESFilmicToneMapping;
 renderer.toneMappingExposure = 1.07;
 renderer.shadowMap.enabled = true;
-renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-renderer.setPixelRatio(Math.min(window.devicePixelRatio, window.innerWidth < 700 ? 1.15 : 1.55));
+// Soft (PCF) shadows do a multi-tap blur per pixel — several times the cost
+// of hard shadows for a difference that's barely visible at this camera
+// distance. Hard shadows on mobile/low-power devices, soft on desktop.
+renderer.shadowMap.type = isLowPower ? THREE.PCFShadowMap : THREE.PCFSoftShadowMap;
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, window.innerWidth < 700 ? 1 : 1.55));
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(44, 1, 0.1, 260);
@@ -151,7 +159,7 @@ function resize() {
   camera.updateProjectionMatrix();
   scratch.overview.copy(world.start.position).addScaledVector(startForward, -24 * cameraZoom).addScaledVector(scratch.overviewOffset, cameraZoom);
   renderer.setSize(width, height, false);
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, width < 700 ? 1.15 : 1.55));
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, width < 700 ? 1 : 1.55));
 }
 
 function setStarted(started = true) {
