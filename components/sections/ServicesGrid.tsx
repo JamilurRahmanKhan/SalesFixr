@@ -41,9 +41,9 @@ export function ServicesGrid() {
         <p className="service-description">Scalable, high-performance web products built with the right modern stack for your roadmap.</p>
         <div className="visual chat-visual web-visual">
           <div className="web-avatar"><MaterialIcon name="chat" /></div>
-          <div className="typing">•••</div>
+          <div className="bubble light">Hi there, how can I help?</div>
           <div className="bubble dark">Can you tell me more about pricing?</div>
-          <div className="bubble light">Good day John, how can I help?</div>
+          <div className="typing">•••</div>
         </div>
         <ul>
           <CheckItem>React &amp; Next.js Development</CheckItem>

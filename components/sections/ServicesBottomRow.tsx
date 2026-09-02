@@ -16,11 +16,12 @@ export function ServicesBottomRow() {
   return (
     <section className="bottom-row">
       <div className="consultation">
-        <div className="portrait">JD</div>
+        <div className="portrait">JK</div>
         <a className="phone" href="tel:+8801630175225" aria-label="Call +8801630175225">
           <MaterialIcon name="call" />
         </a>
         <div className="consultation-copy">
+          <p className="consultation-name">Jamilur Rahman Khan, Founder</p>
           <h2>Not sure which service is right for you?</h2>
           <p>
             Book a free 30-minute software strategy session. We&rsquo;ll understand your goals and recommend the

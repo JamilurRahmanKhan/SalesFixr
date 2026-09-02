@@ -921,9 +921,9 @@ a:focus-visible,button:focus-visible{outline:2px solid #86a3ff;outline-offset:4p
 .svc3 .web-visual{gap:7px;padding:11px 0 0 5px}
 .svc3 .web-avatar{display:grid;place-items:center;width:27px;height:27px;border:2px solid #c3b3ff;border-radius:50%}
 .svc3 .web-avatar svg{width:14px}
-.svc3 .web-visual .bubble.dark{margin-top:30px;margin-left:45px}
+.svc3 .web-visual .bubble.dark{margin-left:45px}
 .svc3 .web-visual .bubble.light{margin-left:5px}
-.svc3 .typing{position:absolute;top:13px;left:42px;padding:7px 12px;border-radius:10px;color:#a3a4ab;background:#f5f5f6;letter-spacing:4px}
+.svc3 .typing{margin-left:42px;padding:7px 12px;border-radius:10px;color:#a3a4ab;background:#f5f5f6;letter-spacing:4px}
 .svc3 .bubble{padding:8px 10px;border-radius:9px;font-size:10px;line-height:1}
 .svc3 .bubble.dark{margin-left:45px;color:#fff;background:#4b4d51}
 .svc3 .bubble.light{color:#36373d;background:#fafafa;border:1px solid #ededf0}
@@ -1001,6 +1001,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #86a3ff;outline-offset:4p
 .svc3 .portrait{display:grid;place-items:center;flex:0 0 auto;width:62px;height:62px;border:5px solid rgba(255,255,255,.7);border-radius:50%;color:#fff;background:#24262d;font-size:18px;font-weight:700}
 .svc3 .phone{display:grid;place-items:center;flex:0 0 auto;width:51px;height:51px;margin-left:-23px;border-radius:50%;color:#414247;background:rgba(255,255,255,.72)}
 .svc3 .phone svg{width:20px}
+.svc3 .consultation-copy .consultation-name{margin:0 0 4px;color:#7c5cff;font-size:11px;font-weight:700;letter-spacing:.02em}
 .svc3 .consultation-copy h2,.svc3 .security h2{margin:0;font-family:HulyDisplay,HulyText,sans-serif;font-size:18px;font-weight:700;letter-spacing:-.02em;color:#111318}
 .svc3 .consultation-copy p{max-width:310px;margin:10px 0;color:#555861;font-size:11px;line-height:1.55}
 .svc3 .consultation button{display:inline-flex;align-items:center;gap:10px;border:0;border-radius:999px;padding:11px 18px;color:#fff;background:#111;font-size:13px;font-weight:600}
