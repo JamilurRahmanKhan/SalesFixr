@@ -588,7 +588,7 @@ function showProject(index, force = false) {
   panelFields.description.textContent = project.description;
   panelFields.role.textContent = project.role;
   panelFields.outcome.textContent = project.outcome;
-  panelFields.link.href = `mailto:hello@compassncrew.com?subject=${encodeURIComponent(`${project.title} case study`)}`;
+  panelFields.link.href = `mailto:hello@salesfixr.com?subject=${encodeURIComponent(`${project.title} case study`)}`;
   panel.style.setProperty('--project-color', `#${project.color.toString(16).padStart(6, '0')}`);
   panel.setAttribute('aria-hidden', 'false');
   projectJump.value = String(index);
@@ -874,7 +874,7 @@ resize();
 renderer.compile(scene, camera);
 experience.dataset.ready = 'true';
 
-window.__COMPASSNCREW_JOURNEY_DEBUG__ = {
+window.__SALESFIXR_JOURNEY_DEBUG__ = {
   get carPosition() { const { x, y, z } = world.car.group.position; return { x, y, z, speed: vehicle.speed, heading: vehicle.heading }; },
   get activeProject() { return vehicle.activeProject; },
   get projectCount() { return world.stations.length; },

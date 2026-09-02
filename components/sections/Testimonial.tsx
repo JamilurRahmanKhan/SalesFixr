@@ -5,7 +5,7 @@ import { MaterialIcon } from "@/components/ui/MaterialIcon";
 
 const QUOTES = [
   {
-    quote: "CompassNCrew shipped our platform faster and cleaner than we expected. The whole process felt genuinely collaborative.",
+    quote: "SalesFixr shipped our platform faster and cleaner than we expected. The whole process felt genuinely collaborative.",
     name: "— Alex Ridley, Founder at Ledgerly",
   },
   {

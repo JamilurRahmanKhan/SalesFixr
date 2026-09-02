@@ -8,9 +8,9 @@ import { AICapabilities } from "@/components/sections/AICapabilities";
 import { FinalCta } from "@/components/sections/FinalCta";
 
 export const metadata: Metadata = {
-  title: "CompassNCrew — Software Built Around Your Vision",
+  title: "SalesFixr — Software Built Around Your Vision",
   description:
-    "CompassNCrew designs and engineers custom web and mobile products, from first sketch to production launch.",
+    "SalesFixr designs and engineers custom web and mobile products, from first sketch to production launch.",
 };
 
 export default function HomePage() {

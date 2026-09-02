@@ -8,7 +8,7 @@ import { HowWeWork } from "@/components/sections/HowWeWork";
 
 export const metadata: Metadata = {
   title: "Services",
-  description: "CompassNCrew services.",
+  description: "SalesFixr services.",
 };
 
 export default function ServicesPage() {

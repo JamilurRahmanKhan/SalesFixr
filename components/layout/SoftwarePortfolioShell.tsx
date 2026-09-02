@@ -55,7 +55,7 @@ export function SoftwarePortfolioShell() {
   return (
     <section
       className="fixed inset-0 z-[70] grid min-h-[100dvh] grid-rows-[minmax(0,1fr)] bg-[#111315] text-[#f4ead6]"
-      aria-label="CompassNCrew software portfolio journey"
+      aria-label="SalesFixr software portfolio journey"
     >
       <div className="relative min-h-0 overflow-hidden">
         <div
@@ -97,7 +97,7 @@ export function SoftwarePortfolioShell() {
 
         <iframe
           ref={frameRef}
-          title="Interactive CompassNCrew software portfolio"
+          title="Interactive SalesFixr software portfolio"
           src="/software-portfolio-app/game.html?mode=game"
           className="block h-full w-full border-0 bg-[#111315]"
           onLoad={() => setLoaded(true)}

@@ -32,9 +32,9 @@ const plexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "CompassNCrew software portfolio",
+  title: "SalesFixr software portfolio",
   description:
-    "Standalone runner for the CompassNCrew software portfolio and interactive 3D journey pages.",
+    "Standalone runner for the SalesFixr software portfolio and interactive 3D journey pages.",
 };
 
 export default function RootLayout({

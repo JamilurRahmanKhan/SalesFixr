@@ -7,7 +7,7 @@ import { ContactInfo } from "@/components/sections/ContactInfo";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "CompassNCrew — Get in touch. Tell us about your project.",
+  description: "SalesFixr — Get in touch. Tell us about your project.",
 };
 
 export default function ContactPage() {

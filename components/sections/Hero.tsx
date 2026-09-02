@@ -122,7 +122,7 @@ export function Hero() {
           Around Your Vision
         </h1>
         <p className="hero-lede">
-          CompassNCrew designs and engineers custom web and mobile products, from first sketch to
+          SalesFixr designs and engineers custom web and mobile products, from first sketch to
           production launch.
         </p>
         <a className="cta-button hero-cta" href="#touch-tomorrow" ref={heroCtaRef}>

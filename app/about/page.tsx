@@ -13,7 +13,7 @@ import { TeamGrid } from "@/components/sections/TeamGrid";
 
 export const metadata: Metadata = {
   title: "About",
-  description: "CompassNCrew — About us. Software design and engineering, built with intent.",
+  description: "SalesFixr — About us. Software design and engineering, built with intent.",
 };
 
 export default function AboutPage() {
