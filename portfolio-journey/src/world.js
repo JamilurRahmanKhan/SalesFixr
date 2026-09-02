@@ -638,95 +638,6 @@ function createTreeInstances(scene, road) {
   scene.add(trunks, canopies, canopies2);
 }
 
-// A handful of higher-detail specimen trees mixed in among the low-poly
-// ones. The source model is very heavy (~180k tris, no shipped leaf/bark
-// textures), so it's flat-shaded in the same palette as the low-poly trees
-// (not textured) and used sparingly — a few dozen individual instances,
-// not the hundreds the instanced low-poly trees use.
-function createDetailedTreeInstances(scene, road) {
-  const count = 20;
-  const bucketCount = 5;
-  const gltfLoader = new GLTFLoader();
-  gltfLoader.setPath(`${import.meta.env.BASE_URL}models/`);
-  gltfLoader.load('tree-detailed.glb', (gltf) => {
-    const source = gltf.scene;
-    let leavesGeometry = null;
-    let trunkGeometry = null;
-    source.traverse((child) => {
-      if (!child.isMesh) return;
-      if (child.material && child.material.name === 'Material.002') trunkGeometry = child.geometry;
-      else leavesGeometry = child.geometry;
-    });
-    if (!leavesGeometry || !trunkGeometry) return;
-
-    const box = new THREE.Box3().setFromObject(source);
-    const height = box.max.y - box.min.y || 1;
-    const baseScale = 3.4 / height;
-    const centerX = (box.max.x + box.min.x) / 2;
-    const centerZ = (box.max.z + box.min.z) / 2;
-    // Bake centering/grounding into the geometry itself (once) so each
-    // instance's matrix only needs to carry position/rotation/scale.
-    leavesGeometry.translate(-centerX, -box.min.y, -centerZ);
-    trunkGeometry.translate(-centerX, -box.min.y, -centerZ);
-
-    // InstancedMesh can't cull individual instances — a single batch
-    // spanning the whole road was rendering all instances (~180k tris each)
-    // every frame as soon as any one tree was on-screen, which was the real
-    // cause of the stutter. Bucketing by road position into several smaller
-    // batches gives each one a small, localized bounding sphere so the
-    // renderer can actually skip the ones that are off-screen.
-    const random = seededRandom();
-    const roadClearance = road.halfWidth + 1.15 + 1.0;
-    const buckets = Array.from({ length: bucketCount }, () => []);
-    for (let index = 0; index < count; index += 1) {
-      random(); random(); random();
-      let x = 0;
-      let z = 0;
-      let t = 0;
-      let safe = false;
-      for (let attempt = 0; attempt < 6 && !safe; attempt += 1) {
-        t = 0.02 + random() * 0.96;
-        const point = road.curve.getPointAt(t);
-        const tangent = road.curve.getTangentAt(t).normalize();
-        const normal = new THREE.Vector3(-tangent.z, 0, tangent.x);
-        const side = random() > 0.5 ? 1 : -1;
-        const distance = 10 + random() * 20;
-        x = point.x + normal.x * side * distance + tangent.x * (random() - 0.5) * 6;
-        z = point.z + normal.z * side * distance + tangent.z * (random() - 0.5) * 6;
-        safe = isClearOfRoad(road, x, z, roadClearance);
-      }
-      if (!safe) continue;
-      const scale = baseScale * (0.8 + random() * 0.5);
-      const quaternion = new THREE.Quaternion().setFromAxisAngle(Y_AXIS, random() * Math.PI * 2);
-      buckets[Math.min(bucketCount - 1, Math.floor(t * bucketCount))].push({ x, z, scale, quaternion });
-    }
-
-    const matrix = new THREE.Matrix4();
-    buckets.forEach((group) => {
-      if (group.length === 0) return;
-      const trunkMesh = new THREE.InstancedMesh(trunkGeometry, material(COLORS.trunk, 0.9, 0.05), group.length);
-      const leavesMesh = new THREE.InstancedMesh(leavesGeometry, material(COLORS.tree, 0.85, 0), group.length);
-      // Shadow-casting this many dense-foliage triangles is the real cost —
-      // it doubles the vertex work (main pass + shadow-map pass) and shadow
-      // maps handle high-poly foliage badly. Not casting keeps the visual
-      // (trees still receive shadow from the sun/other objects) at a
-      // fraction of the GPU cost.
-      trunkMesh.receiveShadow = true;
-      leavesMesh.receiveShadow = true;
-      group.forEach((p, i) => {
-        matrix.compose(new THREE.Vector3(p.x, 0, p.z), p.quaternion, new THREE.Vector3(p.scale, p.scale, p.scale));
-        trunkMesh.setMatrixAt(i, matrix);
-        leavesMesh.setMatrixAt(i, matrix);
-      });
-      trunkMesh.instanceMatrix.needsUpdate = true;
-      leavesMesh.instanceMatrix.needsUpdate = true;
-      trunkMesh.computeBoundingSphere();
-      leavesMesh.computeBoundingSphere();
-      scene.add(trunkMesh, leavesMesh);
-    });
-  });
-}
-
 function createStreetLight() {
   const group = new THREE.Group();
   const metal = material(0x333638, 0.45, 0.48);
@@ -1289,7 +1200,6 @@ export function buildWorld(scene) {
   createEnvironment(scene);
   const road = createRoad(scene);
   createTreeInstances(scene, road);
-  createDetailedTreeInstances(scene, road);
   createGrassTufts(scene, road);
   createStartPlaza(scene, road);
   createDistrictGates(scene, road);
