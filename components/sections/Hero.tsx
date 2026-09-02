@@ -126,7 +126,7 @@ export function Hero() {
           production launch.
         </p>
         <a className="cta-button hero-cta" href="#touch-tomorrow" ref={heroCtaRef}>
-          <span>SEE IN ACTION</span>
+          <span>See in Action</span>
           <b aria-hidden="true">→</b>
         </a>
       </div>
