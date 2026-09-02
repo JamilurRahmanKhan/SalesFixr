@@ -5,8 +5,8 @@ import { MaterialIcon } from "@/components/ui/MaterialIcon";
 
 const STEPS = [
   { icon: "search", num: "01", title: "Discovery & Audit", desc: "We analyze your workflows, bottlenecks, and revenue opportunities.", reverse: false },
-  { icon: "hub", num: "02", title: "Automation Blueprint", desc: "We design a detailed automation architecture aligned with KPIs.", reverse: true },
-  { icon: "auto_awesome", num: "03", title: "Build & Integration", desc: "Our engineers implement AI systems and integrate with your existing tools.", reverse: false },
+  { icon: "hub", num: "02", title: "Architecture & Planning", desc: "We design a detailed technical architecture and roadmap aligned with your goals.", reverse: true },
+  { icon: "auto_awesome", num: "03", title: "Build & Integration", desc: "Our engineers build your product and integrate it with your existing tools and systems.", reverse: false },
   { icon: "sync", num: "04", title: "Testing & Optimization", desc: "Performance testing, data validation, and refinement.", reverse: true },
   { icon: "rocket_launch", num: "05", title: "Deployment & Scaling", desc: "Launch, monitor, and continuously optimize for growth.", reverse: false },
 ];
@@ -65,7 +65,7 @@ export function HowWeWork() {
     <section className="how-section">
       <h2 className="how-heading">How We Work</h2>
       <p className="how-sub">
-        A proven process designed to transform complex workflows into scalable AI-powered systems — efficiently and
+        A proven process designed to turn complex requirements into scalable, reliable software — efficiently and
         strategically.
       </p>
 
