@@ -105,7 +105,7 @@ export function Benefits() {
                 <span className="abt-gantt-bar" style={{ width: "44%", marginLeft: "8%" }}>Design</span>
                 <span className="abt-gantt-bar" style={{ width: "30%", marginLeft: "26%" }}>Build</span>
                 <span className="abt-gantt-bar" style={{ width: "22%", marginLeft: "48%" }}>QA</span>
-                <span className="abt-gantt-bar" style={{ width: "64%", marginLeft: "0%" }}>Ship &amp; support</span>
+                <span className="abt-gantt-bar" style={{ width: "34%", marginLeft: "62%" }}>Deployment &amp; Scaling</span>
               </div>
             </div>
           </article>
