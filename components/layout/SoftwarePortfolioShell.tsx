@@ -36,6 +36,17 @@ export function SoftwarePortfolioShell() {
   useEffect(() => {
     function onMessage(event: MessageEvent) {
       if (event.origin !== window.location.origin) return;
+      // The intro overlay (a nested iframe covering the whole screen while
+      // data-started="false") sends this the moment its own DOM is parsed —
+      // long before the 3D engine (three.js + car model + textures) and the
+      // intro's own decorative images finish downloading behind it. Waiting
+      // on the outer iframe's native `load` event instead means the veil
+      // sits there for the *slowest* of those, not the one actually on
+      // screen. The 3D engine keeps loading in the background regardless.
+      if (event.data === "intro-ready") {
+        setLoaded(true);
+        return;
+      }
       if (event.data === "enter-journey" || event.data === "go-to-software-portfolio") {
         router.push("/software-portfolio");
       } else if (event.data === "go-to-services") {
