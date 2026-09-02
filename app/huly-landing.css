@@ -338,7 +338,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #86a3ff;outline-offset:4p
 @keyframes ai-marquee-right{from{transform:translateX(-33.3333%)}to{transform:translateX(0)}}
 @keyframes ai-icon-float{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-7px) scale(1.06)}}
 .ai-hub{position:absolute;left:50%;top:50%;width:150px;height:150px;transform:translate(-50%,-50%);z-index:2;filter:drop-shadow(0 0 40px rgba(217,70,239,.5))}
-.ai-hub img{width:100%;height:100%}
+.ai-hub img,.ai-hub svg{width:100%;height:100%}
 .ai-hub::before{content:"";position:absolute;inset:-16px;border-radius:50%;border:1px solid rgba(217,70,239,.4);animation:ai-hub-pulse 2.4s ease-out infinite}
 .ai-hub::after{content:"";position:absolute;inset:-16px;border-radius:50%;border:1px solid rgba(139,92,246,.35);animation:ai-hub-pulse 2.4s ease-out infinite;animation-delay:1.2s}
 @keyframes ai-hub-pulse{0%{transform:scale(.8);opacity:.9}100%{transform:scale(1.7);opacity:0}}

@@ -105,7 +105,23 @@ export function AICapabilities() {
               </div>
             </div>
             <div className="ai-hub reveal">
-              <Image src="/images/ai/ai-hub-logo.avif" alt="AI hub" width={64} height={64} />
+              <svg viewBox="0 0 64 64" width={64} height={64} role="img" aria-label="SalesFixr">
+                <defs>
+                  <linearGradient id="aiHubBg" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stopColor="#1c6f66" />
+                    <stop offset="100%" stopColor="#123a8f" />
+                  </linearGradient>
+                  <linearGradient id="aiHubMark" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stopColor="#f2705a" />
+                    <stop offset="100%" stopColor="#5b9dff" />
+                  </linearGradient>
+                </defs>
+                <circle cx="32" cy="32" r="31" fill="url(#aiHubBg)" stroke="rgba(255,255,255,.35)" strokeWidth="1" />
+                <rect x="15" y="15" width="16" height="16" rx="4" transform="rotate(45 23 23)" fill="url(#aiHubMark)" />
+                <rect x="33" y="15" width="16" height="16" rx="4" transform="rotate(45 41 23)" fill="url(#aiHubMark)" />
+                <rect x="15" y="33" width="16" height="16" rx="4" transform="rotate(45 23 41)" fill="url(#aiHubMark)" />
+                <rect x="33" y="33" width="16" height="16" rx="4" transform="rotate(45 41 41)" fill="url(#aiHubMark)" />
+              </svg>
             </div>
           </div>
 
