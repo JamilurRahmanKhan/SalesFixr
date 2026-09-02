@@ -34,6 +34,86 @@ const SLIDES = [
       { value: "4x", label: "Productivity" },
     ],
   },
+  {
+    visual: "built-visual-a",
+    title: "Custom CRM for a B2B Sales Team",
+    desc: "Replaced three disconnected spreadsheets with one pipeline view synced straight to their inbox and calendar.",
+    stats: [
+      { value: "+42%", label: "Deals Closed" },
+      { value: "-5hrs", label: "Admin / Week" },
+      { value: "1", label: "Source of Truth" },
+    ],
+  },
+  {
+    visual: "built-visual-b",
+    title: "Headless Storefront for a DTC Brand",
+    desc: "Rebuilt a sluggish storefront on a headless stack, cutting load times and unlocking checkout customization the old platform blocked.",
+    stats: [
+      { value: "-58%", label: "Page Load Time" },
+      { value: "+21%", label: "Checkout Rate" },
+      { value: "99.9%", label: "Uptime" },
+    ],
+  },
+  {
+    visual: "built-visual-c",
+    title: "Real-Time Dashboard for a Logistics Fleet",
+    desc: "Live GPS, delivery status, and driver load in one screen instead of five separate tools dispatch had to check by hand.",
+    stats: [
+      { value: "3x", label: "Faster Dispatch" },
+      { value: "-30%", label: "Missed ETAs" },
+      { value: "50+", label: "Vehicles Tracked" },
+    ],
+  },
+  {
+    visual: "built-visual-a",
+    title: "Booking System for a Multi-Clinic Practice",
+    desc: "Patients book, reschedule, and get reminders automatically, across every location, without front-desk phone tag.",
+    stats: [
+      { value: "-70%", label: "No-Shows" },
+      { value: "+3hrs", label: "Staff Time / Day" },
+      { value: "4", label: "Clinics Live" },
+    ],
+  },
+  {
+    visual: "built-visual-b",
+    title: "Multi-Vendor Marketplace Launch",
+    desc: "Vendor onboarding, payouts, and order routing built from scratch so the founder could focus on recruiting sellers, not code.",
+    stats: [
+      { value: "120+", label: "Vendors Onboarded" },
+      { value: "+65%", label: "GMV in 6mo" },
+      { value: "2wk", label: "Vendor Onboarding" },
+    ],
+  },
+  {
+    visual: "built-visual-c",
+    title: "Coaching App for a Fitness Platform",
+    desc: "A native mobile app that syncs workout plans, progress photos, and coach messaging in real time across iOS and Android.",
+    stats: [
+      { value: "+90%", label: "Weekly Active Users" },
+      { value: "4.8★", label: "App Store Rating" },
+      { value: "2", label: "Platforms Shipped" },
+    ],
+  },
+  {
+    visual: "built-visual-a",
+    title: "Document AI Pipeline for a Legal Firm",
+    desc: "OCR and LLM-based extraction turns stacks of contracts into searchable, structured data in minutes instead of associate hours.",
+    stats: [
+      { value: "-85%", label: "Review Time" },
+      { value: "10k+", label: "Docs Processed" },
+      { value: "99%", label: "Extraction Accuracy" },
+    ],
+  },
+  {
+    visual: "built-visual-b",
+    title: "Cloud Migration for a Growing Fintech",
+    desc: "Moved a monolith off aging on-prem servers to a scalable cloud architecture with zero downtime during cutover.",
+    stats: [
+      { value: "0min", label: "Downtime" },
+      { value: "-40%", label: "Infra Cost" },
+      { value: "5x", label: "Traffic Headroom" },
+    ],
+  },
 ];
 
 export function ProjectCarousel() {
