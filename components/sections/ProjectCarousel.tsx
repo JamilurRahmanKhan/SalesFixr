@@ -55,12 +55,6 @@ export function ProjectCarousel() {
             <article className={`built-slide${i === index ? " is-active" : ""}`} key={slide.title}>
               <div className={`built-visual ${slide.visual}`} aria-hidden="true" />
               <div className="built-content">
-                <div className="built-logo">
-                  <svg viewBox="0 0 24 24" fill="none">
-                    <path d="M12 2 13.8 9.2 21 12l-7.2 1.8L12 22l-1.8-8.2L3 12l7.2-1.8L12 2Z" fill="#111" />
-                  </svg>
-                  <span>SALESFIXR</span>
-                </div>
                 <h2 className="built-title">{slide.title}</h2>
                 <p className="built-desc">{slide.desc}</p>
                 <a className="built-readmore" href="#">
