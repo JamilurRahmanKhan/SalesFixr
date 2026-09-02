@@ -474,13 +474,16 @@ export function TrustShowcase() {
           ))}
         </div>
 
-        <ul className="module-row reveal" data-delay="1">
-          <li>Frontend</li>
-          <li>Backend</li>
-          <li>APIs</li>
-          <li>DevOps</li>
-          <li>QA</li>
-        </ul>
+        <div className="module-row-block reveal" data-delay="1">
+          <h3>Full-stack coverage, end to end</h3>
+          <ul className="module-row">
+            <li>Frontend</li>
+            <li>Backend</li>
+            <li>APIs</li>
+            <li>DevOps</li>
+            <li>QA</li>
+          </ul>
+        </div>
       </div>
     </section>
   );
