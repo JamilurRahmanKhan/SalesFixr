@@ -368,60 +368,34 @@ function SentryCard() {
   );
 }
 
-function VercelCard() {
+function NovaCard() {
   return (
-    <div className="promo-card promo-card--vercel">
+    <div className="promo-card promo-card--nova">
       <header className="header">
         <div className="brand">
-          <span className="brand-logo"><svg viewBox="0 0 24 24"><path d="M12 3 21 19H3Z" fill="white" /></svg></span>
-          <span className="brand-name">Vercel</span>
+          <span className="brand-logo"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="7" stroke="white" strokeWidth="2" fill="none" /><circle cx="12" cy="12" r="2" fill="white" /></svg></span>
+          <span className="brand-name">Nova</span>
         </div>
-        <div className="new-badge">NEW</div>
       </header>
 
       <h1 className="headline">
-        <span className="headline-white">Deploy faster.</span>
-        <span className="headline-accent">Perform anywhere.</span>
+        <span className="headline-white">Built right.</span>
+        <span className="headline-accent">Shipped fast.</span>
       </h1>
 
-      <p className="subhead">Ship production-ready apps with speed, reliability, and global performance.</p>
+      <p className="subhead">We design, build, and support custom software that grows with your business.</p>
 
       <ul className="feature-list">
-        <FeatureRow title="Instant Deployments" icon={<svg viewBox="0 0 24 24" fill="none"><path d="M12 20V5M6 11l6-6 6 6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>} />
-        <FeatureRow title="Edge Network" icon={<svg viewBox="0 0 24 24" fill="white"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z" /></svg>} />
-        <FeatureRow title="Global Performance" icon={<svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="white" strokeWidth="1.8" /><ellipse cx="12" cy="12" rx="4" ry="9" stroke="white" strokeWidth="1.8" /><path d="M3 12h18M4.5 7.5h15M4.5 16.5h15" stroke="white" strokeWidth="1.5" /></svg>} />
-        <FeatureRow title="Security & Reliability" icon={<svg viewBox="0 0 24 24" fill="none"><rect x="5" y="10.5" width="14" height="9.5" rx="2" stroke="white" strokeWidth="1.8" /><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3" stroke="white" strokeWidth="1.8" /><circle cx="12" cy="15" r="1.4" fill="white" /></svg>} />
+        <FeatureRow title="Custom Development" icon={<svg viewBox="0 0 24 24" fill="none"><path d="M8 6 3 12l5 6M16 6l5 6-5 6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>} />
+        <FeatureRow title="Secure by Design" icon={<svg viewBox="0 0 24 24" fill="none"><path d="M12 3 4 6v5.5c0 5 3.4 8.5 8 9.5 4.6-1 8-4.5 8-9.5V6Z" stroke="white" strokeWidth="1.8" strokeLinejoin="round" /><path d="M8.5 12.2l2.4 2.4 4.6-5" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg>} />
+        <FeatureRow title="Scalable Architecture" icon={<svg viewBox="0 0 24 24" fill="none"><rect x="4" y="14" width="4" height="6" rx="1" stroke="white" strokeWidth="1.8" /><rect x="10" y="9" width="4" height="11" rx="1" stroke="white" strokeWidth="1.8" /><rect x="16" y="4" width="4" height="16" rx="1" stroke="white" strokeWidth="1.8" /></svg>} />
+        <FeatureRow title="Ongoing Support" icon={<svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="white" strokeWidth="1.8" /><path d="M12 7.5v5l3.2 1.9" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg>} />
       </ul>
-
-      <div className="stats-row">
-        <Stat divider={false} value="250K+" label="Developers" icon={<svg className="stat-icon" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="8" r="3.4" stroke="#a371f7" strokeWidth="1.6" /><path d="M2.8 19c0-3.3 2.7-5.6 6.2-5.6s6.2 2.3 6.2 5.6" stroke="#a371f7" strokeWidth="1.6" strokeLinecap="round" fill="none" /><circle cx="17.2" cy="9" r="2.4" stroke="#a371f7" strokeWidth="1.6" /><path d="M15.9 13.5c2.5.3 4.2 2.1 4.2 5" stroke="#a371f7" strokeWidth="1.6" strokeLinecap="round" fill="none" /></svg>} />
-        <Stat value="150+" label="Countries" icon={<svg className="stat-icon" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#a371f7" strokeWidth="1.6" /><ellipse cx="12" cy="12" rx="4" ry="9" stroke="#a371f7" strokeWidth="1.6" /><path d="M3 12h18M4.5 7.5h15M4.5 16.5h15" stroke="#a371f7" strokeWidth="1.4" /></svg>} />
-        <Stat value="1T+" label="Requests / Day" icon={<svg className="stat-icon" viewBox="0 0 24 24" fill="none"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z" fill="#a371f7" /></svg>} />
-        <Stat value="99.99%" label="Uptime" icon={<svg className="stat-icon" viewBox="0 0 24 24" fill="none"><path d="M12 3 4 6v5.5c0 5 3.4 8.5 8 9.5 4.6-1 8-4.5 8-9.5V6Z" stroke="#a371f7" strokeWidth="1.6" strokeLinejoin="round" /><path d="M8.5 12.2l2.4 2.4 4.6-5" stroke="#a371f7" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" /></svg>} />
-      </div>
-
-      <div className="trust-row">
-        <div className="avatars">
-          <span className="avatar" style={{ background: "linear-gradient(135deg,#f2a7c3,#d98fd6)" }}><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="9" r="3.6" fill="rgba(255,255,255,0.85)" /><path d="M4.5 20c0-4 3.4-6.6 7.5-6.6s7.5 2.6 7.5 6.6" fill="rgba(255,255,255,0.85)" /></svg></span>
-          <span className="avatar" style={{ background: "linear-gradient(135deg,#9fd3f5,#7fb2ee)" }}><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="9" r="3.6" fill="rgba(255,255,255,0.85)" /><path d="M4.5 20c0-4 3.4-6.6 7.5-6.6s7.5 2.6 7.5 6.6" fill="rgba(255,255,255,0.85)" /></svg></span>
-          <span className="avatar" style={{ background: "linear-gradient(135deg,#caa6f7,#8f7ae0)" }}><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="9" r="3.6" fill="rgba(255,255,255,0.85)" /><path d="M4.5 20c0-4 3.4-6.6 7.5-6.6s7.5 2.6 7.5 6.6" fill="rgba(255,255,255,0.85)" /></svg></span>
-        </div>
-        <p className="trust-text">
-          Trusted by product teams
-          <br />
-          at the world&rsquo;s best companies
-        </p>
-        <div className="brand-logos">
-          <span className="logo-asana" aria-label="Asana"><svg viewBox="0 0 24 24" width="16" height="16" fill="#9199a3"><circle cx="12" cy="5" r="3.4" /><circle cx="5.5" cy="16.5" r="3.4" /><circle cx="18.5" cy="16.5" r="3.4" /></svg>asana</span>
-          <span className="logo-loom" aria-label="Loom"><svg viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="10" fill="none" stroke="#fdd835" strokeWidth="2" strokeDasharray="1.5 3.4" /><circle cx="12" cy="12" r="4.5" fill="#fdd835" /></svg>loom</span>
-          <span className="logo-ebay" aria-label="eBay"><span className="e-red">e</span><span className="e-blue">b</span><span className="e-yellow">a</span><span className="e-green">y</span></span>
-        </div>
-      </div>
     </div>
   );
 }
 
-const CARDS = [FigmaCard, GithubCard, LinearCard, SentryCard, VercelCard];
+const CARDS = [FigmaCard, GithubCard, LinearCard, SentryCard, NovaCard];
 
 export function TrustShowcase() {
   const stackRef = useRef<HTMLDivElement>(null);
