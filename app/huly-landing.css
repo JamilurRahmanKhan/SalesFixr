@@ -918,7 +918,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #86a3ff;outline-offset:4p
 .svc3 .mini-box{display:grid;place-items:center;min-width:31px;height:30px;padding:0 7px;border:1px solid #d3c6ff;border-radius:7px;color:#7c5cff;background:#fff;box-shadow:0 4px 9px #f4f1ff;font-size:8px}
 .svc3 .mini-box svg{width:14px}
 .svc3 .chat-visual{display:flex;flex-direction:column;align-items:flex-start;gap:7px;padding:11px 0 0 5px}
-.svc3 .web-visual{gap:7px;padding:11px 0 0 5px}
+.svc3 .web-visual{height:172px;gap:7px;padding:11px 0 0 5px}
 .svc3 .web-avatar{display:grid;place-items:center;width:27px;height:27px;border:2px solid #c3b3ff;border-radius:50%}
 .svc3 .web-avatar svg{width:14px}
 .svc3 .web-visual .bubble.dark{margin-left:45px}
