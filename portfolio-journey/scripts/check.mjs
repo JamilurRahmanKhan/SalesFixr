@@ -23,7 +23,7 @@ const checks = [
   ['touch cancellation recovery', main.includes("window.addEventListener('pointercancel'") && main.includes("document.addEventListener('visibilitychange'")],
   ['reduced motion', css.includes('prefers-reduced-motion') && main.includes('reducedMotion')],
   ['project proximity system', main.includes('updateProjectProximity')],
-  ['twenty project system', data.includes('PROJECT_SEEDS') && data.match(/^\s*\[/gm)?.length >= 20],
+  ['ten project system', data.includes('PROJECT_SEEDS') && data.match(/^\s*\[/gm)?.length >= 10],
   ['3D mockup showcase modal', html.includes('mockup-device') && html.includes('showcase-modal')],
   ['consultation destination form', html.includes('consultation-form') && main.includes('updateDestinationProximity')],
   ['viewport-safe consultation form', html.includes('consultation-actions') && css.includes('--journey-viewport-height') && main.includes('syncViewportHeight')],

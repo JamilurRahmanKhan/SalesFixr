@@ -49,6 +49,8 @@ const panelFields = {
   category: document.querySelector('#project-category'),
   title: document.querySelector('#project-title'),
   mockupTitle: document.querySelector('#mockup-title'),
+  mockupCategory: document.querySelector('#mockup-category'),
+  mockupDesc: document.querySelector('#mockup-desc'),
   description: document.querySelector('#project-description'),
   role: document.querySelector('#project-role'),
   outcome: document.querySelector('#project-outcome'),
@@ -585,6 +587,8 @@ function showProject(index, force = false) {
   panelFields.category.textContent = project.category;
   panelFields.title.textContent = project.title;
   panelFields.mockupTitle.textContent = project.title;
+  panelFields.mockupCategory.textContent = project.category;
+  panelFields.mockupDesc.textContent = project.description;
   panelFields.description.textContent = project.description;
   panelFields.role.textContent = project.role;
   panelFields.outcome.textContent = project.outcome;

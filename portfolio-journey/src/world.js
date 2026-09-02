@@ -951,7 +951,7 @@ function createStartPlaza(scene, road) {
   plaza.position.copy(point).setY(-0.03);
   plaza.rotation.y = heading;
   scene.add(plaza);
-  createGateway(scene, road, 0.025, 'The journey begins', 'START / 20 PROJECTS');
+  createGateway(scene, road, 0.025, 'The journey begins', `START / ${PROJECTS.length} PROJECTS`);
 
   const tileMaterialA = material(0xe8dfcc, 0.9, 0);
   const tileMaterialB = material(0x242629, 0.9, 0);
