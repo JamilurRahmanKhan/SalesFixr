@@ -149,19 +149,19 @@ export function RaycastDemo() {
                 <dl>
                   <dt>Project Overview</dt>
                   <dd>
-                    <b>Frontend</b>
-                    <span>React + TypeScript</span>
+                    <b>Migration Path</b>
+                    <span>AWS → GCP</span>
                   </dd>
                   <dd>
-                    <b>Backend</b>
-                    <span>Node.js API</span>
+                    <b>Downtime</b>
+                    <span>0 min</span>
                   </dd>
                   <dd>
                     <b>Progress</b>
                     <span>84% complete</span>
                   </dd>
                   <dd>
-                    <b>Release</b>
+                    <b>Cutover</b>
                     <span>Friday · 14:00</span>
                   </dd>
                 </dl>
