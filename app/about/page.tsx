@@ -4,6 +4,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { PageHero } from "@/components/layout/PageHero";
 import { OurStory } from "@/components/sections/OurStory";
+import { AboutStats } from "@/components/sections/AboutStats";
 import { WhatWeDo } from "@/components/sections/WhatWeDo";
 import { Benefits } from "@/components/sections/Benefits";
 import { Integrations } from "@/components/sections/Integrations";
@@ -40,6 +41,7 @@ export default function AboutPage() {
         />
 
         <OurStory />
+        <AboutStats />
         <div className="abt-rule" aria-hidden="true" />
         <WhatWeDo />
         <div className="abt-rule" aria-hidden="true" />

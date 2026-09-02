@@ -1079,6 +1079,10 @@ a:focus-visible,button:focus-visible{outline:2px solid #86a3ff;outline-offset:4p
 
 /* ===== About page (light) ===== */
 .abt-hero,.abt-story,.abt-work,.abt-benefits,.abt-get,.abt-stack,.abt-approach,.abt-faq,.abt-team{--abt-bg:#ffffff;--abt-panel:#f0f0f0;--abt-panel-2:#e6e6e6;--abt-border:rgba(0,0,0,.08);--abt-text:#111111;--abt-text-dim:#666666;--abt-text-mute:#999999;max-width:1120px;margin:0 auto;padding:64px 24px;position:relative}
+.abt-stats-row{display:flex;justify-content:center;gap:56px;flex-wrap:wrap;max-width:1120px;margin:0 auto;padding:0 24px 64px}
+.abt-stat{display:flex;flex-direction:column;align-items:center;gap:4px}
+.abt-stat strong{font-size:clamp(26px,3vw,34px);font-weight:800;color:#111;letter-spacing:-.01em}
+.abt-stat span{font-size:13px;color:#8a8a8a}
 .abt-story .abt-heading{text-align:left;margin-bottom:20px}
 .abt-story-text{max-width:640px;margin:0 0 16px;font-size:15px;line-height:1.7;color:var(--abt-text-dim)}
 .abt-story-mission{max-width:640px;margin:0;font-size:15px;line-height:1.7;font-weight:600;color:var(--abt-text)}
