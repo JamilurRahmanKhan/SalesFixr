@@ -1,22 +1,30 @@
+// Kept in sync with the "What We've Built" case studies on the Services
+// page (components/sections/ProjectCarousel.tsx) — same title/description
+// per project, so the two sections never contradict each other.
 const PROJECT_SEEDS = [
-  ['Fintech', 'Ledger', 'Wealth intelligence for modern investors.', 'Strategy · Product design · Engineering', 'Turned complex portfolio data into a clear daily decision system.'],
-  ['Fintech', 'Current', 'A calmer way to manage business cash flow.', 'Research · Product design · Frontend', 'Reduced the time teams spend reconciling and forecasting cash.'],
-  ['Health', 'Pulse', 'Care coordination that feels human.', 'Service design · Mobile · Platform', 'Created one calm care journey for clinicians, patients, and families.'],
-  ['Health', 'Kin', 'Family health, organized around real life.', 'Research · Product · Mobile', 'Helped households understand care tasks without clinical complexity.'],
-  ['Commerce', 'Northstar', 'A global storefront built to convert.', 'Commerce strategy · UX · Frontend', 'Simplified the route from product discovery to purchase.'],
-  ['Commerce', 'Parcel', 'Delivery operations customers can actually follow.', 'Experience strategy · Platform · Data', 'Turned logistics events into clear, useful customer communication.'],
-  ['Platforms', 'Atlas', 'Field operations mapped from plan to completion.', 'Systems design · Web app · Mobile', 'Gave distributed teams one shared picture of active work.'],
-  ['Platforms', 'Relay', 'Customer support that keeps its context.', 'Product strategy · AI UX · Engineering', 'Reduced handoff friction across people, channels, and automation.'],
-  ['AI systems', 'Orbit', 'Autonomous operations, clearly controlled.', 'Systems design · AI UX · Engineering', 'Helped teams understand, supervise, and improve automation.'],
-  ['AI systems', 'Mosaic', 'Knowledge that assembles around the question.', 'Research · Interaction · AI engineering', 'Connected scattered organizational knowledge through a focused interface.'],
+  ['E-commerce', 'AI Support Chatbot', 'An intelligent assistant that answers product questions, tracks orders, and recovers abandoned carts around the clock.', 'Product design · AI engineering · Frontend', '3x faster responses and a 35% lift in conversion, with 24/7 coverage.'],
+  ['SaaS', 'Workflow Automation', 'We mapped every manual handoff and replaced it with automated triggers across the stack.', 'Systems design · Automation · Integration', '+40% demo bookings and 3x output after removing the manual handoffs.'],
+  ['Creative agency', 'Internal Tooling', 'A custom dashboard that keeps project timelines, assets, and approvals in one place.', 'Product design · Frontend · Systems', '38% faster delivery and 4x productivity with 62% less admin work.'],
+  ['B2B sales', 'Custom CRM', 'Replaced three disconnected spreadsheets with one pipeline view synced straight to their inbox and calendar.', 'Product strategy · Frontend · Integration', '+42% more deals closed and five fewer admin hours every week.'],
+  ['DTC retail', 'Headless Storefront', 'Rebuilt a sluggish storefront on a headless stack, cutting load times and unlocking checkout customization the old platform blocked.', 'E-commerce architecture · Frontend · Performance', 'Page load time cut 58% with a 21% lift in checkout conversion.'],
+  ['Logistics', 'Real-Time Fleet Dashboard', 'Live GPS, delivery status, and driver load in one screen instead of five separate tools dispatch had to check by hand.', 'Data engineering · Real-time systems · Frontend', '3x faster dispatch and 30% fewer missed delivery windows.'],
+  ['Healthcare', 'Multi-Clinic Booking', 'Patients book, reschedule, and get reminders automatically, across every location, without front-desk phone tag.', 'Product design · Backend · Automation', '70% fewer no-shows and three extra staff hours freed up daily.'],
+  ['Marketplace', 'Multi-Vendor Marketplace', 'Vendor onboarding, payouts, and order routing built from scratch so the founder could focus on recruiting sellers, not code.', 'Full-stack engineering · Payments · Platform', '120+ vendors onboarded and 65% GMV growth in six months.'],
+  ['Fitness', 'Coaching App', 'A native mobile app that syncs workout plans, progress photos, and coach messaging in real time across iOS and Android.', 'Mobile engineering · UX · Real-time sync', '+90% weekly active users and a 4.8-star App Store rating.'],
+  ['Legal tech', 'Document AI Pipeline', 'OCR and LLM-based extraction turns stacks of contracts into searchable, structured data in minutes instead of associate hours.', 'AI engineering · Document processing · Backend', '85% faster review across 10,000+ documents at 99% accuracy.'],
 ];
 
 const CATEGORY_COLORS = {
-  Fintech: 0xcaa36b,
-  Health: 0xd5d0c1,
-  Commerce: 0xb67d50,
-  Platforms: 0x8b9b73,
-  'AI systems': 0x687883,
+  'E-commerce': 0xcaa36b,
+  SaaS: 0x8b9b73,
+  'Creative agency': 0xd5d0c1,
+  'B2B sales': 0xb67d50,
+  'DTC retail': 0xcaa36b,
+  Logistics: 0x687883,
+  Healthcare: 0xd5d0c1,
+  Marketplace: 0xb67d50,
+  Fitness: 0x8b9b73,
+  'Legal tech': 0x687883,
 };
 
 export const PROJECTS = PROJECT_SEEDS.map(([category, title, description, role, outcome], index) => ({
