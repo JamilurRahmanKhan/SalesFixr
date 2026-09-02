@@ -736,7 +736,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #86a3ff;outline-offset:4p
 .how-node::after{content:'';position:absolute;top:50%;left:50%;width:8px;height:8px;border-radius:50%;background:#111;transform:translate(-50%,-50%) scale(0);transition:transform .4s ease .1s}
 .how-row.is-active .how-node::after{transform:translate(-50%,-50%) scale(1)}
 
-.how-text h3{margin:0 0 8px;font-size:22px;font-weight:700;color:#b0b0b0;letter-spacing:-.01em;transition:color .5s ease}
+.how-text h3{margin:0 0 8px;font-size:22px;font-weight:700;color:#5c5c5c;letter-spacing:-.01em;transition:color .5s ease}
 .how-text p{margin:0;font-size:15px;line-height:1.5;color:#b8b8b8;max-width:340px;transition:color .5s ease}
 .how-row.is-active .how-text h3{color:#111}
 .how-row.is-active .how-text p{color:#6b6b6b}
