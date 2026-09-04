@@ -278,6 +278,23 @@ a:focus-visible,button:focus-visible{outline:2px solid #86a3ff;outline-offset:4p
 .module-row li:not(:last-child):after{content:"\00b7";position:absolute;right:-2px;color:rgba(17,19,24,.25)}
 
 
+.github-section{position:relative;overflow:hidden;padding-top:131px;padding-bottom:180px;background:#111}
+.github-section .section-intro{position:relative;z-index:2;max-width:672px;margin-left:40px}
+.github-section .section-intro h2{font-size:80px;line-height:.9}
+.github-section .section-intro p{max-width:580px;margin-top:16px;color:#95979e;font-size:16px;line-height:22px;letter-spacing:-.04em}
+.github-stage{position:relative;z-index:1;display:block;width:960px;height:554px;margin:108px auto 0;cursor:pointer;transition:transform .25s var(--ease)}
+.github-stage:hover,.github-stage:focus-visible{transform:translateY(-2px)}
+.github-glow-video{position:absolute;z-index:0;left:-255px;top:-204px;width:1472px;height:1056px;max-width:none;object-fit:cover;pointer-events:none}
+.github-live-preview{position:absolute;z-index:1;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none;opacity:0;border-radius:16px;transition:opacity .5s ease}
+.github-live-preview.is-live{opacity:1}
+.enter-journey-cta{position:relative;z-index:2;display:flex;height:100%;width:100%;align-items:center;justify-content:center;gap:14px;color:#fff;font-size:20px;font-weight:600;letter-spacing:-.01em;text-shadow:0 2px 12px rgba(0,0,0,.6)}
+.enter-journey-cta i{display:grid;place-items:center;width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,.16);backdrop-filter:blur(6px);font-style:normal;font-size:18px;box-shadow:0 0 0 1px rgba(255,255,255,.25);transition:background .25s ease,transform .25s var(--ease)}
+.github-stage:hover .enter-journey-cta i,.github-stage:focus-visible .enter-journey-cta i{background:rgba(255,255,255,.28);transform:scale(1.08)}
+.github-features{position:relative;z-index:2;display:grid;grid-template-columns:repeat(3,256px);gap:80px 96px;width:960px;margin:160px auto 0}
+.github-features article{min-width:0}
+.github-features img{width:auto;height:40px}
+.github-features h3{max-width:256px;margin:20px 0 12px;font-family:HulyDisplay,HulyText,sans-serif;font-size:32px;font-weight:500;line-height:1;letter-spacing:-.045em}
+.github-features p{max-width:256px;margin:0;color:#95979e;font-size:15px;line-height:1.375;letter-spacing:-.02em}
 
 .movement{position:relative;min-height:660px;overflow:hidden;background:#07090b}
 .movement-art{position:absolute;inset:0;background-image:linear-gradient(90deg,rgba(7,9,11,0) 0 48%,#07090b 72%),url('/images/cta-illustration.8178f665.webp');background-position:center;background-size:cover}
@@ -375,6 +392,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #86a3ff;outline-offset:4p
   .container,.container.narrow{width:min(calc(100% - 36px),var(--max))}.section-pad{padding:82px 0}.site-header{width:calc(100% - 36px);height:64px}.nav-toggle{display:block;justify-self:end}.main-nav{position:absolute;top:58px;left:0;right:0;display:none;flex-direction:column;align-items:stretch;gap:0;padding:8px;border:1px solid rgba(255,255,255,.12);border-radius:12px;background:rgba(10,12,15,.97);box-shadow:0 18px 40px rgba(0,0,0,.42)}.site-header.nav-open .main-nav{display:flex}.main-nav a{padding:13px 12px;border-radius:8px}.main-nav a:hover{background:rgba(255,255,255,.06)}
   .hero{padding-top:0;height:min(100vh,96vw);height:min(100dvh,96vw)}.hero-copy{width:66%}.hero-copy h1{font-size:34px}.hero-lede{font-size:15px}.hero-cta{font-size:13px;width:170px;min-height:42px;margin-top:14px}.hero-cta b{font-size:18px}.hero-cursor-stage{display:none}.hero-aurora:before{left:72%;height:104%}.hero-aurora:after{left:72%}.hero-beam-fall{left:72%;height:104%}.hero-product img{border-radius:6px}.raycast-menu-left span:nth-last-child(-n+4),.raycast-menu-right span:not(:last-child){display:none}.raycast-tooltip{display:none}
   .section-intro h2{font-size:46px}.section-intro p{font-size:14px}
+  .github-section{padding-top:90px;padding-bottom:100px}.github-section .section-intro{margin-left:0}.github-section .section-intro h2{font-size:46px}.github-section .section-intro p{font-size:14px;line-height:1.5}.github-stage{width:100%;height:auto;aspect-ratio:960/554;margin-top:60px}.github-glow-video{left:-26.5625%;top:-36.823%;width:153.333%;height:190.614%}.github-features{grid-template-columns:1fr 1fr;gap:58px 24px;width:100%;margin-top:82px}.github-features h3{margin-top:14px;font-size:20px}.github-features p{font-size:12px}.github-features img{height:32px}
   .movement{min-height:660px}.movement-art{opacity:.7;background-position:43% center;background-image:linear-gradient(180deg,transparent 5%,#07090b 76%),url('/images/cta-illustration.8178f665.webp')}.movement-clock-video{left:calc(43% - 378px);top:126px}.movement-copy{min-height:555px;justify-content:flex-end;padding:0 0 90px}.movement h2{font-size:58px}.movement-copy>p{font-size:13px}
   .ai-cards{grid-template-columns:1fr;gap:16px}.ai-marquee-icon{width:44px;height:44px}.ai-hub{width:100px;height:100px}.ai-marquee-backdrop{height:170px}
 }

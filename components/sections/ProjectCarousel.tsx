@@ -121,7 +121,7 @@ export function ProjectCarousel() {
   const show = (next: number) => setIndex((next + SLIDES.length) % SLIDES.length);
 
   return (
-    <section className="built-section">
+    <section className="built-section" id="what-we-built">
       <h1 className="built-heading">What We&rsquo;ve Built</h1>
 
       <div className="built-carousel">
