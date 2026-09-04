@@ -55,13 +55,11 @@ export default function AboutPage() {
         <TeamGrid />
 
         <section className="abt-final-cta">
-          <div className="abt-final-cta-inner">
-            <h2>Ready to get started?</h2>
-            <p>Just drop us a line today — it&rsquo;s the fastest, easiest way to begin.</p>
-            <Link className="abt-hero-cta" href="/contact">
-              Book a Demo
-            </Link>
-          </div>
+          <h2>Ready to get started?</h2>
+          <p>Just drop us a line today — it&rsquo;s the fastest, easiest way to begin.</p>
+          <Link className="abt-hero-cta" href="/contact">
+            Book a Demo
+          </Link>
         </section>
       </main>
       <Footer />

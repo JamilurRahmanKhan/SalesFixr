@@ -8,20 +8,18 @@ const TEAM = [
 export function TeamGrid() {
   return (
     <section className="abt-team">
-      <div className="abt-team-inner">
-        <h2 className="abt-heading">Meet the Team</h2>
-        <p className="abt-sub">Expertise, focus, and follow-through — the people behind your project.</p>
-        <div className="abt-team-grid">
-          {TEAM.map((member) => (
-            <div className="abt-team-card" key={member.name}>
-              <span className="abt-team-avatar" style={{ background: `linear-gradient(135deg,${member.gradient})` }}>
-                {member.letter}
-              </span>
-              <strong>{member.name}</strong>
-              <span>{member.role}</span>
-            </div>
-          ))}
-        </div>
+      <h2 className="abt-heading">Meet the Team</h2>
+      <p className="abt-sub">Expertise, focus, and follow-through — the people behind your project.</p>
+      <div className="abt-team-grid">
+        {TEAM.map((member) => (
+          <div className="abt-team-card" key={member.name}>
+            <span className="abt-team-avatar" style={{ background: `linear-gradient(135deg,${member.gradient})` }}>
+              {member.letter}
+            </span>
+            <strong>{member.name}</strong>
+            <span>{member.role}</span>
+          </div>
+        ))}
       </div>
     </section>
   );

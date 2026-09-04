@@ -1364,20 +1364,18 @@ a:focus-visible,button:focus-visible{outline:2px solid #86a3ff;outline-offset:4p
 .abt-faq-item.is-open .abt-faq-a{max-height:220px}
 .abt-faq-a p{margin:0;padding:0 22px 20px;font-size:14px;line-height:1.6;color:var(--abt-text-dim)}
 
-.abt-team{max-width:none;width:100%;margin:0;--abt-bg:#0a0a0f;--abt-panel:#17171d;--abt-panel-2:#1f1f27;--abt-border:rgba(255,255,255,.1);--abt-text:#f2f2f5;--abt-text-dim:#a6a6b0;--abt-text-mute:#77777f;background:#0a0a0f;padding:56px 24px}
-.abt-team-inner{max-width:1120px;margin:0 auto}
 .abt-team-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:20px}
 .abt-team-card{display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center}
 .abt-team-avatar{width:84px;height:84px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:26px;font-weight:800;border:3px solid var(--abt-bg,#fff);box-shadow:0 0 0 1px rgba(0,0,0,.08)}
 .abt-team-card strong{font-size:14px;color:var(--abt-text)}
 .abt-team-card span{font-size:11.5px;color:var(--abt-text-mute)}
 
-.abt-final-cta{position:relative;max-width:none;width:100%;margin:0;padding:64px 24px;text-align:center;overflow:hidden;border-radius:0;background:#0a0a0f}
-.abt-final-cta-inner{position:relative;max-width:1120px;margin:0 auto}
-.abt-final-cta h2{margin:0 0 12px;font-size:clamp(28px,4vw,40px);font-weight:800;color:#f2f2f5}
-.abt-final-cta p{margin:0 0 28px;font-size:15px;color:#a6a6b0}
-.abt-final-cta .abt-hero-cta{position:relative;background:#fff;color:#111}
-.abt-final-cta .abt-hero-cta:hover{background:#e2e2e6}
+.abt-final-cta{position:relative;max-width:1120px;margin:40px auto 96px;padding:64px 24px;text-align:center;overflow:hidden;border-radius:40px;background:conic-gradient(from 210deg,#f9d8ea,#dbe8ff,#e3f8e2,#fff4d3,#f9d8ea)}
+.abt-final-cta h2,.abt-final-cta p{position:relative}
+.abt-final-cta h2{margin:0 0 12px;font-size:clamp(28px,4vw,40px);font-weight:800;color:#111}
+.abt-final-cta p{margin:0 0 28px;font-size:15px;color:#333}
+.abt-final-cta .abt-hero-cta{position:relative;background:#111;color:#fff}
+.abt-final-cta .abt-hero-cta:hover{background:#2a2a2a}
 
 @media (max-width:860px){
   .abt-get-grid{flex-direction:column}
@@ -1415,7 +1413,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #86a3ff;outline-offset:4p
   .abt-testimonial-card{grid-template-columns:34px 1fr 34px;gap:6px}
   .abt-t-nav{width:34px;height:34px}
   .abt-tab{padding:8px 14px;font-size:12.5px}
-  .abt-final-cta{padding:48px 20px}
+  .abt-final-cta{padding:48px 20px;border-radius:28px;margin:24px auto 64px}
   .abt-team-grid{gap:20px}
   .abt-team-avatar{width:60px;height:60px;font-size:20px}
   .abt-steps{grid-template-columns:repeat(2,1fr);gap:24px 12px}
