@@ -797,7 +797,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #86a3ff;outline-offset:4p
 .gfooter-copy{font-size:12px;color:rgba(255,255,255,.4)}
 .gfooter-copy a{color:rgba(255,255,255,.55);text-decoration:underline}
 .gfooter-logo{justify-self:center;display:flex;align-items:center;gap:10px;text-decoration:none}
-.gfooter-logo img{width:clamp(22px,4vw,36px);height:clamp(22px,4vw,36px);object-fit:contain}
+.gfooter-logo img{width:clamp(30px,5vw,46px);height:clamp(30px,5vw,46px);object-fit:contain}
 .gfooter-wordmark{font-size:clamp(28px,5vw,52px);font-weight:800;letter-spacing:-.02em;background:linear-gradient(180deg,rgba(255,255,255,.5),rgba(255,255,255,.08));-webkit-background-clip:text;background-clip:text;color:transparent;white-space:nowrap}
 .gfooter-tag{justify-self:end;font-size:12px;color:rgba(255,255,255,.4);text-align:right}
 

@@ -62,7 +62,7 @@ export function Footer() {
           © SalesFixr 2026 | <Link href="/privacy">Privacy Policy</Link>
         </span>
         <Link href="/" className="gfooter-logo" aria-label="SalesFixr home">
-          <Image src="/images/logo.png" alt="" width={40} height={40} />
+          <Image src="/images/logo.png" alt="" width={46} height={46} />
           <span className="gfooter-wordmark">SALES FIXR</span>
         </Link>
         <span className="gfooter-tag">Software, built with intent</span>
