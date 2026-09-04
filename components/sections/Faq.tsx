@@ -16,24 +16,26 @@ export function Faq() {
 
   return (
     <section className="abt-faq" id="faqs">
-      <h2 className="abt-heading">FAQ</h2>
-      <p className="abt-sub">Find everything you need to know, right here.</p>
-      <div className="abt-faq-grid">
-        {FAQS.map((item, index) => (
-          <div className={`abt-faq-item${openIndex === index ? " is-open" : ""}`} key={item.q}>
-            <button
-              className="abt-faq-q"
-              type="button"
-              onClick={() => setOpenIndex(openIndex === index ? null : index)}
-            >
-              {item.q}
-              <span className="abt-faq-plus" />
-            </button>
-            <div className="abt-faq-a">
-              <p>{item.a}</p>
+      <div className="abt-faq-inner">
+        <h2 className="abt-heading">FAQ</h2>
+        <p className="abt-sub">Find everything you need to know, right here.</p>
+        <div className="abt-faq-grid">
+          {FAQS.map((item, index) => (
+            <div className={`abt-faq-item${openIndex === index ? " is-open" : ""}`} key={item.q}>
+              <button
+                className="abt-faq-q"
+                type="button"
+                onClick={() => setOpenIndex(openIndex === index ? null : index)}
+              >
+                {item.q}
+                <span className="abt-faq-plus" />
+              </button>
+              <div className="abt-faq-a">
+                <p>{item.a}</p>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );

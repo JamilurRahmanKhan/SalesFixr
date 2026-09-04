@@ -1346,7 +1346,8 @@ a:focus-visible,button:focus-visible{outline:2px solid #86a3ff;outline-offset:4p
 .abt-t-nav svg path{stroke:#111}
 .abt-t-nav:hover{background:#e2e2e2}
 
-.abt-faq{max-width:660px;--abt-bg:#0a0a0f;--abt-panel:#17171d;--abt-panel-2:#1f1f27;--abt-border:rgba(255,255,255,.1);--abt-text:#f2f2f5;--abt-text-dim:#a6a6b0;--abt-text-mute:#77777f;background:#0a0a0f;border-radius:28px;padding:48px 40px;box-shadow:0 24px 60px -24px rgba(0,0,0,.4)}
+.abt-faq{max-width:none;width:100%;margin:0;--abt-bg:#0a0a0f;--abt-panel:#17171d;--abt-panel-2:#1f1f27;--abt-border:rgba(255,255,255,.1);--abt-text:#f2f2f5;--abt-text-dim:#a6a6b0;--abt-text-mute:#77777f;background:#0a0a0f;padding:56px 24px}
+.abt-faq-inner{max-width:660px;margin:0 auto}
 .abt-faq-grid{display:flex;flex-direction:column;gap:12px}
 .abt-faq-item{background:var(--abt-panel);border:1px solid var(--abt-border);border-radius:12px;overflow:hidden;transition:border-color .2s ease}
 .abt-faq-item:hover{border-color:rgba(255,255,255,.22)}
