@@ -23,7 +23,7 @@ export default function AboutPage() {
       <a className="skip-link" href="#main">
         Skip to content
       </a>
-      <main id="main" className="abt-dark-page">
+      <main id="main">
         <PageHero
           heading={
             <>
