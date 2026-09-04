@@ -2,6 +2,12 @@ import * as THREE from 'three';
 import { buildWorld } from './world.js';
 import { DISTRICTS, PROJECTS } from './data.js';
 
+// Same Google Sheet + Apps Script Web App the main site's Contact form
+// (components/sections/ContactForm.tsx) posts to, so both forms land in the
+// same sheet with matching columns (name, email, company, message).
+const SHEET_WEB_APP_URL =
+  'https://script.google.com/macros/s/AKfycbz4fq3YMavPiVzHDdfPXcKKIEA8qWgS0YdOSOVltE4RWk7MUjtik-KxhuPVDPz0lFuA/exec';
+
 const experience = document.querySelector('#experience');
 const canvas = document.querySelector('#world');
 const fallback = document.querySelector('#webgl-fallback');
@@ -865,6 +871,22 @@ consultationForm.addEventListener('focusin', (event) => {
   window.setTimeout(() => event.target.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth', block: 'center' }), 120);
 });
 consultationForm.addEventListener('submit', () => {
+  const formData = new FormData(consultationForm);
+  const data = {
+    name: formData.get('name') || '',
+    email: formData.get('email') || '',
+    company: formData.get('company') || '',
+    message: formData.get('brief') || '',
+  };
+  // method="dialog" already closes the modal natively; this just fires the
+  // save alongside it. no-cors means we can't read the response, so this
+  // fires and forgets rather than blocking the UI on it.
+  fetch(SHEET_WEB_APP_URL, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'text/plain' },
+    body: JSON.stringify(data),
+  }).catch(() => {});
   destinationCallout.querySelector('strong').textContent = 'Thank you. We’ll be in touch.';
   destinationCallout.querySelector('button').textContent = 'Request received';
 });
