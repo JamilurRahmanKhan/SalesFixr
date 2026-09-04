@@ -1,8 +1,0 @@
-{
-  "rewrites": [
-    {
-      "source": "/software-portfolio-app/(.*)\\.html",
-      "destination": "/software-portfolio-app/$1"
-    }
-  ]
-}

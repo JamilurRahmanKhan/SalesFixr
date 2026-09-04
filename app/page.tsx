@@ -4,7 +4,6 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/sections/Hero";
 import { TrustShowcase } from "@/components/sections/TrustShowcase";
-import { PortfolioTeaser } from "@/components/sections/PortfolioTeaser";
 import { AICapabilities } from "@/components/sections/AICapabilities";
 import { FinalCta } from "@/components/sections/FinalCta";
 
@@ -24,7 +23,6 @@ export default function HomePage() {
       <main id="main">
         <Hero />
         <TrustShowcase />
-        <PortfolioTeaser />
         <AICapabilities />
         <FinalCta />
       </main>

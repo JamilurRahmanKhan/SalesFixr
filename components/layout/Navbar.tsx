@@ -65,12 +65,6 @@ export function Navbar() {
         </Link>
       ))}
 
-      <Link href="/software-portfolio" className="float-nav-cta" aria-label="Enter the journey">
-        <svg viewBox="0 0 24 24">
-          <path d="M12 5v14M5 12h14" />
-        </svg>
-      </Link>
-
       {SECONDARY_NAV_ITEMS.map((item) => (
         <Link
           key={item.href}
