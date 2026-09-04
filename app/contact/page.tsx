@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Header } from "@/components/layout/Header";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { PageHero } from "@/components/layout/PageHero";
@@ -16,6 +17,7 @@ export default function ContactPage() {
       <a className="skip-link" href="#main">
         Skip to content
       </a>
+      <Header />
       <main id="main">
         <PageHero
           heading={

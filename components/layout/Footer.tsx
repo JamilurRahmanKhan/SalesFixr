@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const SOCIAL_LINKS = [
@@ -60,7 +61,10 @@ export function Footer() {
         <span className="gfooter-copy">
           © SalesFixr 2026 | <Link href="/privacy">Privacy Policy</Link>
         </span>
-        <span className="gfooter-wordmark">SALES FIXR</span>
+        <Link href="/" className="gfooter-logo" aria-label="SalesFixr home">
+          <Image src="/images/logo.png" alt="" width={40} height={40} />
+          <span className="gfooter-wordmark">SALES FIXR</span>
+        </Link>
         <span className="gfooter-tag">Software, built with intent</span>
       </div>
     </footer>

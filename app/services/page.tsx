@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Header } from "@/components/layout/Header";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ProjectCarousel } from "@/components/sections/ProjectCarousel";
@@ -17,6 +18,7 @@ export default function ServicesPage() {
       <a className="skip-link" href="#main">
         Skip to content
       </a>
+      <Header />
       <main id="main">
         <ProjectCarousel />
 
