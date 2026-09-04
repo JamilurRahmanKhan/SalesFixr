@@ -474,7 +474,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #86a3ff;outline-offset:4p
   .raycast-dock button{width:44px;height:44px}
 }
 
-.brand-header{position:fixed;top:22px;left:clamp(20px,6vw,88px);z-index:998}
+.brand-header{position:absolute;top:22px;left:clamp(20px,6vw,88px);z-index:998}
 .brand-header-logo{display:flex;align-items:center;justify-content:center;width:54px;height:54px;border-radius:50%;background:rgba(255,255,255,.92);backdrop-filter:blur(18px) saturate(1.4);box-shadow:0 12px 28px rgba(0,0,0,.22),0 0 0 1px rgba(255,255,255,.6) inset;transition:transform .2s ease,box-shadow .2s ease}
 .brand-header-logo:hover{transform:translateY(-2px);box-shadow:0 16px 34px rgba(0,0,0,.28),0 0 0 1px rgba(255,255,255,.6) inset}
 .brand-header-logo img{width:30px;height:30px;object-fit:contain}
